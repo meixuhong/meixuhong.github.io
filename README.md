@@ -245,3 +245,15 @@ git push origin hexo # 推送到hexo分支
    ```
 
 > **如果有更换电脑，直接在新电脑上将hexo分支clone下来即可, master分支可以通过hexo命令生成** 。另外，如果需要定制主题的话，一般是在`header.ejs`与`style.css`下面定制头与css样式。
+
+> 附：gitignore文件：
+
+   ```shell
+   .DS_Store
+    Thumbs.db
+    db.json
+    *.log
+    node_modules/
+    public/
+    .deploy*/
+   ```
