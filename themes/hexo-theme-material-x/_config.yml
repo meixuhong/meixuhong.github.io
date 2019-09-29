@@ -142,7 +142,7 @@ body: [article, comments]
 # 侧边栏小部件，默认按下面给定的顺序全部显示，文章中还可以自定义显示一部分以及顺序
 sidebar:
   - widget: author
-    avatar: http://ww1.sinaimg.cn/large/67c0b572gy1g6by59rngyj20rs0vqq5z.jpg
+    avatar: http://ww1.sinaimg.cn/large/67c0b572gy1g7gnb7dv1aj20fx0fxgmh.jpg
     social: true
   - widget: plain 
     title: 注意啦～
