@@ -78,8 +78,8 @@ pagination_dir: page
 theme: hexo-theme-material-x
 
 # 配置网站图标favicon与作者图标avatar，适用于hexo-theme-material-x
-favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
-avatar: http://ww1.sinaimg.cn/large/67c0b572gy1g6bsx3y9hsj20ae08q77t.jpg
+favicon: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/m-logo.ico
+avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/mei.jpg
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
