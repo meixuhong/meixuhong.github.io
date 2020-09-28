@@ -32,7 +32,7 @@ tags:
 - -i 为指定输入源文件,即目录中的txt文件
 - -o 为指定输出源文件,即输出的markdown文件
 
-![kindle-python](https://upload-images.jianshu.io/upload_images/2639285-f7b234e1b07d23a3.gif)
+![kindle-python](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/python-kindle.gif)
 
 源码开源在[github](https://github.com/wowmarcomei/kindle_notes_export)，欢迎star与使用。
 

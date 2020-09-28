@@ -144,11 +144,24 @@ sidebar:
   - widget: author
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg
     social: true
+  # - widget: plain 
+  #   title: 微信公众号
+  #   icon: fas fa-bullhorn fa-fw
+  #   body: '公众号《老梅笔记》：mei-idea，个人微信: wowmarcomei'
+  #   avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/qc.jpg
+
   - widget: plain 
     title: 微信公众号
-    icon: fas fa-bullhorn fa-fw
+    icon: fas fa-blog
     body: '公众号《老梅笔记》：mei-idea，个人微信: wowmarcomei'
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/qc.jpg
+
+  # - widget: plain
+  #   icon: fas fa-blog
+  #   title: 微信公众号
+  #   body: '<a href="https://imeixuhong.com" title="微信扫描二维码添加好友"><img src="https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/qc.jpg"></a>'
+    
+
   # - widget: grid
   #   icon: fas fa-map-signs
   #   title: 站内导航
@@ -180,6 +193,12 @@ sidebar:
       icon: fas fa-expand-arrows-alt
       url: blog/categories/
       rel: nofollow
+
+  # - widget: category
+  #   more:
+  #     icon: fas fa-expand-arrows-alt
+  #     url: categories/
+  #     rel: nofollow
 
   - widget: tagcloud
     icon: fas fa-fire
@@ -222,9 +241,9 @@ share:
   - id: qzone
     name: QQ空间
     img: https://cdn.jsdelivr.net/gh/meixuhong/assets@19.1.9/logo/128/qzone.png
-  # - id: qrcode
-  #   name: 微信
-  #   img: https://cdn.jsdelivr.net/gh/meixuhong/assets@19.1.9/logo/128/wechat.png
+  - id: qrcode
+    name: 微信
+    img: https://cdn.jsdelivr.net/gh/meixuhong/assets@19.1.9/logo/128/wechat.png
   - id: weibo
     name: 微博
     img: https://cdn.jsdelivr.net/gh/meixuhong/assets@19.1.9/logo/128/weibo.png
