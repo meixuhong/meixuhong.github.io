@@ -75,13 +75,13 @@ hexo clean && hexo g && cp -fr ../[path]/_book/ public/ && hexo d
 
 - 首先需要将Gitbook账号与GitHub账号进行绑定
 
-![gitbook](http://ww1.sinaimg.cn/large/67c0b572gy1fu7zpdx5jwj20xu0h6jrp.jpg)
+![gitbook](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Gitbook-Github.jpg)
 
 - 关联账号后可以将书籍与仓库进行绑定关联
 
   进入`Space`后点击**设置**按钮进行关联前面创建的仓库`ebook`
 
-![gitbook](http://ww1.sinaimg.cn/large/67c0b572gy1fu7zmi6ahxj20ws0hu0t3.jpg)
+![gitbook](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Gitbook_integration.jpg)
 
 ## 2.4. 通过Git更新书籍
 
@@ -141,7 +141,7 @@ vi 4.理解Python中使用yield进行迭代.md
 
 即为`[]()`构成的列表，如果需要嵌套层级，相比上一个层级多缩进一下即可，上面的例子中就有三个层级。
 
-![gitbook](http://ww1.sinaimg.cn/large/67c0b572gy1fu8xuzc4yvj20n00hjglo.jpg)
+![gitbook](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Gitbook-Structure.jpg)
 
 完成后通过`git`推送到`github`,`gitbook.com`就会从仓库里自动同步，此时访问gitbook.com即可访问发布的数据。
 
@@ -151,6 +151,6 @@ git commit -m "update..."
 git push origin master #推送到master分支，gitbook应该也是绑定到仓库的该分支，否则不能同github同步
 ```
 
-![gitbook](http://ww1.sinaimg.cn/large/67c0b572gy1fu8fbywhdhj210p0hvdfy.jpg)
+![gitbook](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Gitbook_overview.jpg)
 
 > **瑕疵**: 新版本的Gitbook中对`Markdown`的有序列表支持不是很好，原本的列表项`1, 2, 3, 4, ... `在gitbook中会变成`1, 1, 1, 1, ...`，目前没看到有解决，所以我们在记录笔记的时候换成无序列表吧，或者换成小标题也行。

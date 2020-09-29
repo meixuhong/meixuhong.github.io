@@ -2,17 +2,17 @@
 title: 使用Python实现快速整理微信视频与照片
 date: 2016-09-18 18:24:57
 categories: python
-description: 作为超级APP，微信已经成了移动互联网的入口。而我们也早已习惯通过微信收发图片与视频等多媒体文件。身为一名屌丝通信狗，经常出差海外，跟家人的沟通方式主要就靠微信了，每当累了或抑郁了，打开微信看看媳妇儿和孩子的视频照片，就觉得开心多了。最终，微信变得越来越臃肿，视频与图片也必须早点保存到手机或者电脑。但是最终导出的文件命名是让人相当崩溃的。
+description: 作为超级APP，微信已经成了移动互联网的入口。而我们也早已习惯通过微信收发图片与视频等多媒体文件。身为一名屌丝通信狗，经常出差海外，跟家人的沟通方式主要就靠微信了，每当累了或抑郁了，打开微信看看家人的视频照片，就觉得开心多了。最终，微信变得越来越臃肿，视频与图片也必须早点保存到手机或者电脑。但是最终导出的文件命名是让人相当崩溃的。有没有办法快速重新命名呢？
 tags: 
     - Python
     - 微信
 ---
 
-作为超级APP，微信已经成了移动互联网的入口。而我们也早已习惯通过微信收发图片与视频等多媒体文件。身为一名屌丝通信狗，经常出差海外，跟家人的沟通方式主要就靠微信了，每当累了或抑郁了，打开微信看看媳妇儿和孩子的视频照片，就觉得开心多了。最终，微信变得越来越臃肿，视频与图片也必须早点保存到手机或者电脑。但是最终导出的文件命名是让人相当崩溃的。
+作为超级APP，微信已经成了移动互联网的入口。而我们也早已习惯通过微信收发图片与视频等多媒体文件。身为一名屌丝通信狗，经常出差海外，跟家人的沟通方式主要就靠微信了，每当累了或抑郁了，打开微信看看家人的视频照片，就觉得开心多了。最终，微信变得越来越臃肿，视频与图片也必须早点保存到手机或者电脑。但是最终导出的文件命名是让人相当崩溃的。有没有办法快速重新命名呢？
 
-![wechat1](http://ww1.sinaimg.cn/large/67c0b572gy1g6bw82g3l9j20rm0hbwh7.jpg)
+![wechat1](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Wechat-photoes-vedios-orgnize.jpg)
 
-**是能忍 孰不能忍**，作为一名有(xia)抱(zhe)负(teng)的屌丝，是绝不能容忍这么杂乱的文件命名的，也绝不可能因此就对这些文件逐一手动重命名的。
+
 
 ## 使用自动化利器Python
 作为批量处理文件的利器，当然非Python莫属了，而且有一堆优质库可供调用，基本搜索一下能解决90%需求。对于这个需求初始想法是直接通过os库获取文件的创始时间，依此来重新命名文件，可是最终发现os库获取的是文件第一次拷贝到系统的时间，并非文件的初始创建时间。比如，2016-09-10日19：00：23拷贝2016-06-16日10：00：00拍摄的视频文件到系统硬盘，系统就记录其时间为2016-09-10日19：00：23，并非6月16日。
@@ -70,8 +70,9 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '1.mov':
 即是说使用Hachoir可以直接查看文件的二进制文件，提取文件的[metadata](https://en.wikipedia.org/wiki/Metadata)即可获取到数码照片与视频的初始创建时间了。
 
 实现过程到还是到我的项目主页[Github](https://github.com/wowmarcomei/RenameVideosImages)一览吧。
-![wechat2](https://upload-images.jianshu.io/upload_images/2639285-c71117af2a87be3e.gif)
+
+![wechat2](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Wechat-orgnize-demo.gif)
 
 执行完Python脚本，再来看各个文件名，感觉整个世界瞬间变得美好了。
 
-![wechat3](http://ww1.sinaimg.cn/large/67c0b572gy1g6bwa6h1zcj20rm0hbwh4.jpg)
+![wechat3](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Wechat-photoes-vedios-orgnize-result.jpg)

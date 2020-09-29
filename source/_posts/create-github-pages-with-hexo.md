@@ -167,6 +167,14 @@ hexo s # 本地生成查看静态网站，启动服务器业务
 hexo d # 生成.deploy_git目录上传到托管网站github相应路径，即上传到master分支
 ```
 
+   > 注：
+   >
+   > - `--save`参数会将库安装到本目录下的node_modules下面。
+   > - nodejs工程将需要安装的包写在`package.json`文件中。
+   > - 使用`npm audit -fix`可以查出工程还需要哪些包
+   > - 可以到https://mirrors.huaweicloud.com/下面查看nodejs加速镜像
+
+
 ### 4. 在本地搭建hexo分支
 
 上面已经在github上创建了hexo分支，使用git命令提交hexo程序到github的hexo分支。
@@ -223,7 +231,7 @@ git push origin hexo # 推送到hexo分支
    npm install hexo-deployer-git --save
    npm install hexo-generator-sitemap --save
    
-   npm un hexo-renderer-marked --save
+   npm i hexo-renderer-marked --save
    npm i hexo-renderer-markdown-it --save
    
    npm install hexo-symbols-count-time --save
@@ -231,11 +239,22 @@ git push origin hexo # 推送到hexo分支
    npm install hexo-generator-sitemap --save #sitemap.xml适合提交给谷歌搜素引擎
    npm install hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
    
-   npm install gulp -g
+   npm install gulp --save
    npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
    
    npm install hexo-generator-searchdb --save
    ```
+
+   
+
+   > 注：
+   >
+   > - `--save`参数会将库安装到本目录下的node_modules下面。
+   > - nodejs工程将需要安装的包写在`package.json`文件中。
+   > - 使用`npm audit -fix`可以查出工程还需要哪些包
+   > - 可以到https://mirrors.huaweicloud.com/下面查看nodejs加速镜像
+
+   
 
 5. 如果需要对Hexo源码进行操作,发布到hexo分支
 
