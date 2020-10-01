@@ -11,18 +11,14 @@ tags:
   - Git
 ---
 
+> Github Pages是Github免费提供的静态网站服务，我们可以将自己的静态网站推送到Github仓库，让它提供网站服务，**免去自己申请主机服务器的困(费)扰(用)**。不过默认对外提供的域名为`<username>.github.io`，如果希望使用自己的域名如`baidu.com`，则需要对该域名进行`CNAME`解析到`<username>.github.io`.
+
+
 在github上可以用户名创建一个repository: `<username>.github.io`，该仓库即为一个静态页面github page，可以在github上该仓库的设置界面选择主题来设置自己喜欢的`theme`，也可以通过`Hexo`来更新整个github page。为了可以在多台电脑上**均可**管理hexo源码与发布github page博客博文，我们需要使用两个分支：`master` 与 `hexo`。
 
 - hexo分支为源代码文件。
 - master分支为发布的github page静态页面所需的所有文件。
 
-## 一.在开发Hexo的原始电脑上搭建流程
-
-> 一般为自己个人PC，或者公有云平台（如华为云、腾讯云和阿里云等）
-
-### 1. 在本地安装nodejs与npm工具
-
-注意需要到nodejs官网获取最新版本nodejs,否则后续使用hexo与npm会报错。
 
 ```
 $cd
@@ -197,81 +193,81 @@ git push origin hexo # 推送到hexo分支
 
 4. 复制hexo分支代码到本机
 
-   ```shell
-   $ git clone -b hexo git@github.com:wowmarcomei/wowmarcomei.github.io.git
-   $ cd wowmarcomei.github.io
-   $ git branch #查看当前分支，应该为hexo
-   $ rm -fr node_modules  #如果从github中clone下来的工程中有该目录就删除掉, 没有就算了
-   $ vim .gitignore #加入node_modules,public, .deploy_git这几个目录，
-   $ npm install #在工程目录中用 npm install 命令生成node_modules，每个项目有单独一套node_modules（像Java中的Maven那样),如果出现一些包需要更新的提示，如提示使用npm audit fix进行修复，则执行该命令
-   ```
+```
+$ git clone -b hexo git@github.com:wowmarcomei/wowmarcomei.github.io.git
+$ cd wowmarcomei.github.io
+$ git branch #查看当前分支，应该为hexo
+$ rm -fr node_modules  #如果从github中clone下来的工程中有该目录就删除掉, 没有就算了
+$ vim .gitignore #加入node_modules,public, .deploy_git这几个目录，
+$ npm install #在工程目录中用 npm install 命令生成node_modules，每个项目有单独一套node_modules（像Java中的Maven那样),如果出现一些包需要更新的提示，如提示使用npm audit fix进行修复，则执行该命令
+```
 
    如果使用的是[snippet](<https://github.com/shenliyang/hexo-theme-snippet>)主题，因为 **hexo-theme-snippet** 使用了 `ejs` 模版引擎 、 `Less` CSS预编译语言以及在官方插件的基础上 进行功能的开发，以下为必装插件：
 
-   ```bash
-   npm install hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S
-   npm install hexo-generator-json-content@2.2.0 -S #本地站点搜索插件
-   ```
+```bash
+npm install hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S
+npm install hexo-generator-json-content@2.2.0 -S #本地站点搜索插件
+```
 
    在通过git上传到github之前，需要安装`hexo-deployer-git`，可以全局安装，也可以本地工程安装。下面采取本地安装。
 
-   ```bash
-   npm install --save hexo-deployer-git
-   ```
+```bash
+npm install --save hexo-deployer-git
+```
 
    还有一些可选的hexo插件，可以安装到本地工程目录中去：
 
-   ```bash
-   npm install hexo-server --save
-   npm install hexo-admin --save
-   npm install hexo-generator-archive --save
-   npm install hexo-generator-feed --save
-   npm install hexo-generator-search --save
-   npm install hexo-generator-tag --save
-   npm install hexo-deployer-git --save
-   npm install hexo-generator-sitemap --save
+```bash
+npm install hexo-server --save
+npm install hexo-admin --save
+npm install hexo-generator-archive --save
+npm install hexo-generator-feed --save
+npm install hexo-generator-search --save
+npm install hexo-generator-tag --save
+npm install hexo-deployer-git --save
+npm install hexo-generator-sitemap --save
    
-   npm i hexo-renderer-marked --save
-   npm i hexo-renderer-markdown-it --save
+npm i hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it --save
    
-   npm install hexo-symbols-count-time --save
+npm install hexo-symbols-count-time --save
    
-   npm install hexo-generator-sitemap --save #sitemap.xml适合提交给谷歌搜素引擎
-   npm install hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
+npm install hexo-generator-sitemap --save #sitemap.xml提交给谷歌引擎
+npm install hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
    
-   npm install gulp --save
-   npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
+npm install gulp --save
+npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
    
-   npm install hexo-generator-searchdb --save
-   ```
+npm install hexo-generator-searchdb --save
+```
 
    
 
-   > 注：
-   >
-   > - `--save`参数会将库安装到本目录下的node_modules下面。
-   > - nodejs工程将需要安装的包写在`package.json`文件中。
-   > - 使用`npm audit -fix`可以查出工程还需要哪些包
-   > - 可以到https://mirrors.huaweicloud.com/下面查看nodejs加速镜像
+> 注：
+>
+> - `--save`参数会将库安装到本目录下的node_modules下面。
+> - nodejs工程将需要安装的包写在`package.json`文件中。
+> - 使用`npm audit -fix`可以查出工程还需要哪些包
+> - 可以到https://mirrors.huaweicloud.com/下面查看nodejs加速镜像
 
    
 
 5. 如果需要对Hexo源码进行操作,发布到hexo分支
 
-   ```bash
-   git add *
-   git commit -m "your comment"
-   git push origin hexo #推送到远程github的hexo分支
-   ```
+```bash
+git add *
+git commit -m "your comment"
+git push origin hexo #推送到远程github的hexo分支
+```
 
 6. 如果需要更新blog，则使用hexo操作发布到master
 
-   ```bash
-   hexo clean
-   hexo g
-   gulp   #压缩html,css,js文件
-   hexo s #s为本地server模式
-   hexo d #d为deploy部署模式
-   ```
+```bash
+hexo clean
+hexo g
+gulp   #压缩html,css,js文件
+hexo s #s为本地server模式
+hexo d #d为deploy部署模式
+```
 
 > **如果有更换电脑，直接在新电脑上将hexo分支clone下来即可, master分支可以通过hexo命令生成** 。另外，如果需要定制主题的话，一般是在`header.ejs`与`style.css`下面定制头与css样式。
