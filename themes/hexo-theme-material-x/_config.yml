@@ -96,14 +96,18 @@ menu_desktop:
     # icon: fas python
     url: /categories/python/
     rel: nofollow
-  - name: Docker
+  - name: Web
     # icon: fas python
-    url: /categories/docker/
+    url: /categories/web/
     rel: nofollow    
-  - name: Git
+  - name: Sql
     # icon: fas python
-    url: /categories/git/
+    url: /categories/sql/
     rel: nofollow    
+  - name: 容器
+    # icon: fas python
+    url: /categories/容器/
+    rel: nofollow      
   - name: 归档
     # icon: fas fa-archive
     url: /archives/
@@ -111,18 +115,29 @@ menu_desktop:
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
+  - name: 首页
+    # icon: fas home
+    url: /
+  # - name: 分类
+  #   icon: fas fa-folder-open
+  #   url: /categories/
+  #   rel: nofollow
   - name: Python
     # icon: fas python
     url: /categories/python/
     rel: nofollow
-  - name: Docker
+  - name: Web
     # icon: fas python
-    url: /categories/docker/
+    url: /categories/web/
     rel: nofollow    
-  - name: Git
+  - name: Sql
     # icon: fas python
-    url: /categories/git/
+    url: /categories/sql/
     rel: nofollow    
+  - name: 容器
+    # icon: fas python
+    url: /categories/容器/
+    rel: nofollow     
   - name: 归档
     # icon: fas fa-archive
     url: /archives/

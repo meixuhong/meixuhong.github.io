@@ -2,8 +2,8 @@
 title: Centos上部署Harbor私有仓库
 date: 2019-08-25 18:42:18
 categories: 
-  - [docker]
-  - [harbor]
+  - 容器
+  - docker
 description: Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包括权限管理(RBAC)、LDAP、日志审核、管理界面、自我注册、镜像复制和中文支持等功能。使用Harbor可以部署企业自己的私有仓库，将一些核心镜像与软件与外部网络进行隔离与防护。
 tags:
   - Docker

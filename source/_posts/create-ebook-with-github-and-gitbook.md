@@ -1,8 +1,11 @@
 ---
 title: 使用GitHub与Gitbook制作自己的书籍
 date: 2018-08-13 11:05:44
-categories: git
 description: 最近在学习网络爬虫知识，经常需要做笔记，有几个选择。Hexo博客记录：还是不太喜欢这种定制化过高的博客，等有时间了再来自己折腾一个出来，Pass。 有道笔记：还算是好用，但是每次记录或者查询的时候都要登录显得不是那么方便，Pass。 GitHub：可以在任意地方查阅与修改，是很方便，但是网页形势浏览不是很方便，Pass。 Gitbook：可以在任意地方查阅与修改，web界面式浏览，很方便，就是它了。
+categories: 
+	- web
+	- hexo
+	- github
 tags:
 	- Gitbook
 	- Github

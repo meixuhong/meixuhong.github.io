@@ -1,11 +1,15 @@
 ---
 title: Hexo的一些小技巧
 date: 2016-07-19 07:24:36
-categories: hexo
-description: 在不断折腾自己开发Django、Flask、部署wordpress后，最终还是回到了Hexo，因为Hexo配合Github可以无需购买任何云服务器就可以方便部署个人静态站点，且可以通过git版本分布式管理的方式同步管理，使得成本与便携性兼具。
+categories: 
+  - web
+  - hexo
+  - github
 tags: 
     - Hexo
-    - 折腾
+    - 折腾  
+description: 在不断折腾自己开发Django、Flask、部署wordpress后，最终还是回到了Hexo，因为Hexo配合Github可以无需购买任何云服务器就可以方便部署个人静态站点，且可以通过git版本分布式管理的方式同步管理，使得成本与便携性兼具。
+
 ---
 
 在不断折腾自己开发Django、Flask、部署wordpress后，最终还是回到了Hexo，因为Hexo配合Github可以无需购买任何云服务器就可以方便部署个人静态站点，且可以通过git版本分布式管理的方式同步管理，使得成本与便携性兼具。
