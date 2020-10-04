@@ -7,7 +7,7 @@ tags:
 categories: 
 	- web
 	- hexo
-description: 目标：1) 通过Github Pages搭建自己的静态网站.  2)将自己购买的域名解析到Github Pages.  3) 将顶级域名`example.com`和子域名`www.example.com`解析到Github Pages。
+description: 目标：1) 通过Github Pages搭建自己的静态网站.  2)将自己购买的域名解析到Github Pages.  3) 将顶级域名example.com和子域名www.example.com解析到Github Pages。
 ---
 
 
