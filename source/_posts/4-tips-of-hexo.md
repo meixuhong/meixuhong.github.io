@@ -4,7 +4,6 @@ date: 2016-07-19 07:24:36
 categories: 
   - web
   - hexo
-  - github
 tags: 
     - Hexo
     - 折腾  

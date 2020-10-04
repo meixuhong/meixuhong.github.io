@@ -1,114 +1,73 @@
-#loading-bar-wrapper
-  position: fixed
-  top: 0
-  left: 0
-  height: 2px
-  width: 100%
-  z-index: 9999
-
-#loading-bar
-  position: fixed
-  width: 0
-  height: 2px
-  trans()
-  background-color: $color-theme
-
-
 .l_header
-  $iconW = 32px
+  $iconW = 36px
   $iconMargin = 4px
   position: fixed
-  z-index: 99
+  z-index: 1000
   top: 0
   width: 100%
-  line-height: $navbar-height
-  padding: 0 $gap
-  margin-bottom: $gap
+  height: $navbar-height
+  background: var(--color-card)
   box-shadow: $boxshadow-card
+  &.auto
+    transition: opacity .4s ease
+    visibility: hidden
+    &.show
+      opacity: 1 !important
+      visibility: visible
+  .container
+    margin-left: $gap
+    margin-right: $gap
   .wrapper
-    padding: auto $gap
-    height: $navbar-height
+    height: 100%
     disable-user-select()
+    .nav-main,.nav-sub
+      display: flex
+      flex-wrap: nowrap
+      justify-content: space-between
+      align-items: center
+
     .nav-main
       trans()
-      transform: translateY(0 - $navbar-height)
+      // transform: translateY(0 - $navbar-height)
+    &.sub .nav-main
+      transform: translateY(0 - 1 * $navbar-height)
     .nav-sub
       trans()
       opacity: 0
-    trans()
-    a
-      &:not([href])
-        cursor: default
-    .title
-      color: $color-text
-  &.no_sidebar
-    .wrapper
-      max-width: $layout-width - $sidebar
-      @media screen and (min-width: 2000px)
-        max-width: "calc(55vw - %s)" % $sidebar
-      .m_search
-        @media screen and (min-width: $device-mobile)
-          max-width: 112px
-
-  .wrapper.sub
-    .title
-      @media screen and (max-width: $device-mobile)
-        trans()
-        padding-left: $gap
-        padding-right: 0
-    .nav-main
-      trans()
-      transform: translateY(0 - 2 * $navbar-height)
-    .nav-sub
+      height: $navbar-height
+      width: "calc(100% - 2 * %s)" % $gap
+      position: absolute
+      @media screen and (min-width: $device-2k)
+        max-width: 55vw
+        margin: auto
+    &.sub .nav-sub
       opacity: 1
-  .nav-main,.nav-sub
-    height: $navbar-height
-    display: flex
-    flex-wrap: nowrap
-    justify-content: space-between
-    align-items: center
-
-  background: $color-card
-  &.hide
-    transform: translateY(100px) scale(0)
-
-  &.show
-    transform: translateY(0) scale(1)
-
-  &,a
-    height: $navbar-height
-    line-height: $navbar-height
-
-  .nav-main
     .title
+      position: relative
+      color: var(--color-text)
+      padding-left: $gap * 1.5
+      max-height: $navbar-height
+
+    .nav-main .title
       txt-ellipsis()
       flex-shrink: 0
+      line-height: $navbar-height
       padding: 0 $gap*1.5
       font-size: $fontsize-h3
       font-family: $fontfamily-logo
-
-      @media screen and (max-width: $device-mobile)
-        padding: 0 $gap
       img
-        height: 100%
-        padding: 4px 0
+        height: $navbar-height
 
   .nav-sub
     max-width: $layout-width
     margin: auto
-    @media screen and (min-width: 2000px)
-      max-width: 55vw
     .title
-      font-size: $fontsize-body
+      font-weight: bold
       font-family: $fontfamily
       line-height: 1.2
       max-height: $navbar-height
       white-space: normal
       flex-shrink: 1
-      @media screen and (max-width: $device-mobile)
-        overflow-y: scroll
-        margin-top: 2px
-        padding: 8px $gap
 
 
 
@@ -117,7 +76,7 @@
     line-height: $navbar-height
     .s-toc
       display: none
-
+    align-items: center
     @media screen and (max-width: $device-tablet)
       .s-toc
         display: flex
@@ -144,111 +103,136 @@
           border: none
         &.active,&:active
           border: none
-          background: bgcolor($color-theme)
+          background: var(--color-site-bg)
         @media screen and (max-width: $device-mobile)
           width: $iconW
           height: $height
-    @media screen and (max-width: $device-mobile)
-      display: flex
-      padding-left: $gap * 0.5
-      padding-right: $gap - 6px
+
   .nav-sub .switcher
     display: flex
+
   .m_search
-    position: relative
     display: flex
-    width: $sidebar
     height: $navbar-height
-    @media screen and (max-width: $device-desktop)
-      width: $sidebar-s
+    width: $sidebar
+    trans()
+    @media screen and (max-width: $device-laptop)
+      width: 44px
+      min-width: 44px
+      input
+        &::placeholder
+          opacity: 0
+      &:hover
+        input
+          &::placeholder
+            opacity: 1
+        width: $sidebar
+    @media screen and (min-width: $device-mobile)
+      &:hover .input
+        &::placeholder
+          opacity: 1
+        width: 100%
+    @media screen and (max-width: $device-mobile)
+      input
+        &::placeholder
+          opacity: 1
+      min-width: 0
 
     .form
       position: relative
       display: flex
       width: 100%
-      margin: auto
-      justify-content: flex-start
       align-items: center
-
-    .icon,.input
-      trans(.3s)
 
     .icon
       position: absolute
       width: $iconW
       left: $iconMargin + 1px
-      color: alpha($color-text, 70%)
+      color: var(--color-meta)
       @media screen and (max-width: $device-mobile)
         display: none
     .input
       display: block
       padding-top: $gap * 0.5
       padding-bottom: $gap * 0.5
+      line-height: 1.3
       width: 100%
-      color: $color-text
-      background: darken($color-card, 5)
+      color: var(--color-text)
+      background: darken($color-card, 2)
       box-shadow: none
       box-sizing: border-box
       padding-left: $iconW + $iconMargin
       font-size: $fontsize-meta
       border-radius: $border-searchbar
-      border: 1px dashed transparent
+      border: none
+      trans()
+      @media screen and (min-width: $device-mobile)
+        &:focus
+          box-shadow: $boxshadow-float
       @media screen and (max-width: $device-mobile)
+        background: var(--color-block)
         padding-left: $gap * 0.5
         border: none
         &:hover,&:focus
           border: none
-      &:hover
-        ~.icon
-          color: alpha($color-theme, 80%)
-      &:focus
-        ~.icon
-          color: $color-theme
-
 
 
   @media (max-width: $device-mobile)
-    padding: 0
     .m_search
-      width:0
+      left: 0
+      width: 0
       overflow: hidden
       position: absolute
+      background: lighten($color-card, 5)
       trans()
-      margin-left: $gap
-
+      .input
+        border-radius: $navbar-height * 0.5
+        margin-left: $gap
+        padding-left: $gap
     &.z_search-open
       .m_search
-        $offset = 3 * $gap + 2 * $iconW
-        width: "calc(100% - %s)" % $offset
+        width: 100%
+        .input
+          width: "calc(100% - %s)" % (3 * $gap + 2 * $iconW)
 
-ul.list-h,ul.list-v
+ul.m-pc
+  >li>a
+    color: inherit
+    border-bottom: 2px solid transparent
+    &:active,&.active
+      border-bottom: 2px solid $color-theme
+ul.m-pc,ul.list-v
   li:hover
     >ul.list-v
       display: block
 
-ul.list-h
+
+ul.nav-list-h
   display: flex
-  align-items: center
-  height: 100%
+  align-items: stretch
   &>li
-    height: 100%
     position: relative
     justify-content: center
+    height: 100%
+    line-height: 2.4
+    border-radius: $border-button
     >a
-      // border-top: $border-line solid transparent
-      border-bottom: $border-line solid transparent
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+      font-weight: 600
 
 ul.list-v
   z-index: 1
   display: none
+  &.show
+    display: block
   position: absolute
-  background: $color-card
-  box-shadow: $boxshadow-float
+  background: var(--color-card)
+  box-shadow: $boxshadow-dropmenu
   margin-top: -2px - $border-card * 0.5
   border-radius: $border-card * 0.5
-  border: 1px solid darken($color-codeblock, 6)
   padding: $gap * 0.5 0
-  >hr
+  hr
     margin-top: $gap * 0.5
     margin-bottom: $gap * 0.5
   >li
@@ -258,42 +242,56 @@ ul.list-v
       font-size: $fontsize-footnote
       font-weight: bold
       line-height: 2em
-      color: $color-meta
+      color: var(--color-meta)
       margin: $gap * 0.5 $gap $gap * 0.25
+      i
+        margin-right: 8px
     ul
       margin-left: 0
       display: none
       margin-top: 0 - 32px - $gap * 0.5
-
+  .aplayer-container
+    min-height: 64px
+    padding: $gap - 10px $gap
   >li>a
+    trans()
+    display: block
+    color: var(--color-list)
     font-size: $fontsize-meta
     font-weight: bold
-    line-height: 33px
-    padding: 0 $gap
-    height: 32px
-    border-left: $border-line solid transparent
-    border-right: $border-line solid transparent
-    &:hover,&.active,&:active
-      color: $color-theme
-      border-left: $border-line solid $color-theme
-      border-bottom: none
+    line-height: 36px
+    @media screen and (max-width: $device-laptop)
+      line-height: 40px
+    padding: 0 $gap + $border-line + 2px 0 $gap
+    text-overflow: ellipsis
+    margin: 0 4px
+    border-radius: 4px
     >i
-      margin-right: 4px
+      margin-right: 8px
+    &:active,&.active
+      list_active()
+    &:hover
+      list_hover()
 
+.l_header
+  .menu
+    >ul>li>a
+      display: block
+      padding: 0 8px
+      >i
+        margin-right: 4px
 
-.menu,.menu-phone
-  position: relative
-  trans()
-  li
-    position: relative
-  @media screen and (max-width: $device-mobile)
-    display:none
-
-ul>li>a
-  trans()
-  display: block
-  padding: 0 8px
-  color: alpha($color-text, 85%)
+.l_header ul.nav-list-h>li
+  color: var(--color-list)
+  line-height: $navbar-height - 2px
+  >a
+    max-height: $navbar-height - 2px
+    overflow: hidden
+    color: inherit
+    &:active,&.active
+      color: $color-theme
+  &:hover>a
+    color: var(--color-list-hl)
   i.music
     animation: rotate-effect 1.5s linear infinite
     @keyframes rotate-effect
@@ -304,23 +302,10 @@ ul>li>a
       50%
         transform: rotate(180deg)
       75%
-        transform: rotate(27  0deg)
+        transform: rotate(270deg)
       100%
         transform: rotate(360deg)
-  &.current
-    border-left-color: alpha($color-theme, 80%)
-    border-bottom-color: alpha($color-theme, 80%)
 
-  &:hover
-    color: $color-theme
-    border-left-color: $color-theme
-    border-bottom-color: $color-theme
-    background: bgcolor($color-theme)
-
-  &:active,&.active
-    color: $color-theme
-    border-left-color: $color-theme
-    border-bottom-color: $color-theme
 
 .menu-phone li ul.list-v
   right: "calc(100% - 0.5 * %s)" % $gap
@@ -328,10 +313,10 @@ ul>li>a
     right: "calc(100% - 0.5 * %s)" % $gap
 
 .l_header .wrapper
-  if hexo-config('style.navbar.width') == 'auto'
+  if hexo-config('custom_css.navbar.width') == 'auto'
     max-width: $layout-width
     margin: auto
-    @media screen and (min-width: 2000px)
+    @media screen and (min-width: $device-2k)
       max-width: 55vw
     .menu
       flex: 1 1 auto
@@ -339,10 +324,11 @@ ul>li>a
       .list-v ul
         left: "calc(100% - 0.5 * %s)" % $gap
   else
-    .title
-      margin-right: auto
     .m_search
+      margin-left: auto
       margin-right: $gap
+    .menu
+      order: 1
     .menu li ul.list-v
       right: 0
       ul
@@ -352,16 +338,12 @@ ul>li>a
 .menu-phone
   display: none
   margin-top: $gap
-  right: 0
+  right: $gap * 0.5
   ul
     right: "calc(100% - 0.5 * %s)" % $gap
   @media screen and (max-width: $device-mobile)
     display: block
   trans()
-  // transform: scale(0,0) rotate(12deg)
-  // transform-origin: right top
-  // &.show
-  //   transform: scale(1,1) rotate(0)
 
 
 .cover-wrapper
@@ -370,3 +352,43 @@ ul>li>a
     transform: translateY(-2 * $navbar-height)
     &.show
       transform: translateY(0)
+
+
+.l_header
+  if hexo-config('custom_css.navbar.width') == 'auto'
+    max-width: 65vw
+    left: "calc((100% - %s) * 0.5)" % @max-width
+    border-bottom-left-radius: $border-card
+    border-bottom-right-radius: $border-card
+    @media screen and (max-width: $device-2k)
+      max-width: $layout-width + 2 * $gap
+      left: "calc((100% - %s) * 0.5)" % @max-width
+    @media screen and (max-width: $layout-width + 2 * $gap)
+      left: 0
+      border-radius: 0
+      max-width: 100%
+  @media screen and (max-width: $device-mobile)
+    .container
+      margin-left: 0
+      margin-right: 0
+    .wrapper
+      .nav-main
+        .title
+          padding-left: $gap
+          padding-right: $gap
+      .nav-sub
+        width: 100%
+        .title
+          overflow-y: scroll
+          margin-top: 2px
+          padding: 8px $gap
+      .switcher
+        display: flex
+        margin-right: $gap * 0.5
+    .menu
+      display:none
+
+@media screen and (max-width: $device-mobile)
+  .list-v
+    li
+      max-width: 270px

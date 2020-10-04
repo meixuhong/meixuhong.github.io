@@ -1,63 +1,77 @@
 // inline btn
-span.btn
+.article span.btn, .md span.btn
   display: inline
-  >a
+  a
+    text-decoration: none
+    border-bottom: none
     display: inline-block
-    background: $color-theme
-    color: $color-inner
-    padding: 2px 4px 0px 4px
+    padding: 3px 4px 2px 4px
     margin: 2px
+    line-height: 1.1
     border-radius: 2px
     i
-      margin-right: 0px
+      margin-right: 2px
     trans()
-    &:hover
-      color: $color-inner
-      background: $color-hover
     &:not([href])
       opacity: 0.5
       &:hover
-        cursor: not-allowed
+        cursor: $not-allowed,not-allowed
 
-  &.regular
-    >a
-      padding: 8px 16px 6px 16px
-      i
-        margin-right: 4px
-  &.large
-    >a
-      padding: 10px 40px 8px 40px
-      i
-        margin-right: 8px
+  & a, &.regular a
+    color: $color-button
+    border: 1px solid @color
+    &:hover
+      color: $color-hover
+      border-color: $color-hover
+    i
+      margin-right: 4px
+
+  &.regular a, &.solid a
+    padding: 8px 12px
+
+  &.solid a
+    border: none
+    background: $color-button
+    color: $color-inner
+    &:hover
+      color: $color-inner
+      background: $color-hover
+
+  &.large a
+    font-size: 1rem
+    padding: 12px 36px
+    i
+      margin-right: 8px
+
   &.center
     display: block
     text-align: center
 
 
 // btns
-div.btns
+.article div.btns, .md div.btns
   margin: 0 -0.5 * $gap
-  &,b,p,a
+  &,p,a
     font-size: $fontsize-code
-    color: $color-p
-  &,>p
-    display: flex
-    flex-wrap: wrap
-    align-items: flex-start
-    overflow: visible
-  &.wide>p>a,&.wide>a
+    color: var(--color-p)
+  b
+    font-size: $fontsize-meta
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  overflow: visible
+  line-height: 1.8
+  &.wide>a
     padding-left: $gap*2
     padding-right: $gap*2
-  &.fill>p>a,&.fill>a
+  &.fill>a
     flex-grow: 1
     width: auto
   &.around
-    &,>p
-      justify-content: space-around
+    justify-content: space-around
   &.center
-    &,>p
-      justify-content: center
-  &.grid2>p>a,&.grid2>a
+    justify-content: center
+  &.grid2>a
     width: "calc(100%/2 - %s)" % $gap
     @media screen and (max-width: $device-laptop)
       width: "calc(100%/2 - %s)" % $gap
@@ -65,7 +79,7 @@ div.btns
       width: "calc(100%/2 - %s)" % $gap
     @media screen and (max-width: $device-mobile)
       width: "calc(100%/1 - %s)" % $gap
-  &.grid3>p>a,&.grid3>a
+  &.grid3>a
     width: "calc(100%/3 - %s)" % $gap
     @media screen and (max-width: $device-laptop)
       width: "calc(100%/3 - %s)" % $gap
@@ -73,7 +87,7 @@ div.btns
       width: "calc(100%/3 - %s)" % $gap
     @media screen and (max-width: $device-mobile)
       width: "calc(100%/1 - %s)" % $gap
-  &.grid4>p>a,&.grid4>a
+  &.grid4>a
     width: "calc(100%/4 - %s)" % $gap
     @media screen and (max-width: $device-laptop)
       width: "calc(100%/3 - %s)" % $gap
@@ -81,7 +95,7 @@ div.btns
       width: "calc(100%/3 - %s)" % $gap
     @media screen and (max-width: $device-mobile)
       width: "calc(100%/2 - %s)" % $gap
-  &.grid5>p>a,&.grid5>a
+  &.grid5>a
     width: "calc(100%/5 - %s)" % $gap
     @media screen and (max-width: $device-laptop)
       width: "calc(100%/4 - %s)" % $gap
@@ -91,6 +105,8 @@ div.btns
       width: "calc(100%/2 - %s)" % $gap
   a
     trans()
+    text-decoration: none
+    border-bottom: none
     margin: $gap * 0.5
     margin-top: "calc(1.25 * %s + 32px)" % $gap
     min-width: 120px
@@ -111,14 +127,14 @@ div.btns
         width: auto
       margin: $gap $gap * 0.5 $gap * 0.25 $gap * 0.5
       margin-top: "calc(-1.25 * %s - 32px)" % $gap
-      border: 2px solid $color-card
+      border: 2px solid var(--color-card)
       background: $color-inner
       line-height: 60px
       font-size: 28px
     &>i:first-child
       color: $color-inner
       background: $color-theme
-    background: $color-block
+    background: var(--color-block)
     border-radius: 4px
     p,b
       margin: .25em
@@ -141,10 +157,10 @@ div.btns
         transform: scale(1.1) translateY(-8px)
         box-shadow: $boxshadow-float
       &>i:first-child
-        background:$color-hover
-  &.circle>p a, &.circle a
+        background: $color-hover
+  &.circle a
     &>img:first-child, &>i:first-child
       border-radius: 32px
-  &.rounded>p a, &.rounded a
+  &.rounded a
     &>img:first-child, &>i:first-child
       border-radius: 16px

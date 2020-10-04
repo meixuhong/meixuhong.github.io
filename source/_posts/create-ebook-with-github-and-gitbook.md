@@ -5,7 +5,6 @@ description: 最近在学习网络爬虫知识，经常需要做笔记，有几�
 categories: 
 	- web
 	- hexo
-	- github
 tags:
 	- Gitbook
 	- Github
