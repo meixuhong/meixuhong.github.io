@@ -198,40 +198,40 @@ git push origin hexo # 推送到hexo分支
    如果使用的是[snippet](<https://github.com/shenliyang/hexo-theme-snippet>)主题，因为 **hexo-theme-snippet** 使用了 `ejs` 模版引擎 、 `Less` CSS预编译语言以及在官方插件的基础上 进行功能的开发，以下为必装插件：
 
    ```bash
-   npm install hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S
-   npm install hexo-generator-json-content@2.2.0 -S #本地站点搜索插件
+   npm i hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S
+   npm i hexo-generator-json-content@2.2.0 -S #本地站点搜索插件
    ```
 
    在通过git上传到github之前，需要安装`hexo-deployer-git`，可以全局安装，也可以本地工程安装。下面采取本地安装。
 
    ```bash
-   npm install --save hexo-deployer-git
+   npm i --save hexo-deployer-git
    ```
 
    还有一些可选的hexo插件，可以安装到本地工程目录中去：
 
    ```bash
-   npm install hexo-server --save
-   npm install hexo-admin --save
-   npm install hexo-generator-archive --save
-   npm install hexo-generator-feed --save
-   npm install hexo-generator-search --save
-   npm install hexo-generator-tag --save
-   npm install hexo-deployer-git --save
-   npm install hexo-generator-sitemap --save
+   npm i hexo-server --save
+   npm i hexo-admin --save
+   npm i hexo-generator-archive --save
+   npm i hexo-generator-feed --save
+   npm i hexo-generator-search --save
+   npm i hexo-generator-tag --save
+   npm i hexo-deployer-git --save
+   npm i hexo-generator-sitemap --save
    
    npm i hexo-renderer-marked --save
    npm i hexo-renderer-markdown-it --save
    
-   npm install hexo-symbols-count-time --save
+   npm i hexo-symbols-count-time --save
    
-   npm install hexo-generator-sitemap --save #sitemap.xml适合提交给谷歌搜素引擎
-   npm install hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
+   npm i hexo-generator-sitemap --save #sitemap.xml适合提交给谷歌搜素引擎
+   npm i hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
    
-   npm install gulp --save
-   npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
+   npm i gulp --save
+   npm i gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
    
-   npm install hexo-generator-searchdb --save
+   npm i hexo-generator-searchdb --save
    ```
 
    
