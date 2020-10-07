@@ -81,6 +81,19 @@ theme: hexo-theme-material-x
 favicon: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/m-logo.ico
 avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/mei.jpg
 
+# 配置百度主动提交，需要安装插件：npm i hexo-baidu-url-submit -S
+# baidu_url_submit:
+#   count: 10 # 提交最新的链接数
+#   host: lmbiji.com # 在百度站长平台中注册的域名,虽然官方推荐要带有 www, 但可以不带.
+#   token:  a7T7UoE9EEqqeqzU # 你的秘钥,每个人都不一样,获取方法在下面
+#   path: baidu_urls.txt # 文本文档的地址,新链接会保存在此文本文档里
+# # 针对百度主动提交动作的deploy
+# deploy:
+#  type: baidu_url_submitter
+
+# 用了上述插件后报错，故注释掉
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
