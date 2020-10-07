@@ -97,17 +97,17 @@ menu_desktop:
     # icon: fas python
     url: /categories/python/
     rel: nofollow
-  - name: Web
+  - name: Hexo
     # icon: fas python
-    url: /categories/web/
+    url: /categories/hexo/
     rel: nofollow    
   - name: Sql
     # icon: fas python
     url: /categories/sql/
     rel: nofollow    
-  - name: 容器
+  - name: Docker
     # icon: fas python
-    url: /categories/容器/
+    url: /categories/docker/
     rel: nofollow      
   - name: 归档
     # icon: fas fa-archive
