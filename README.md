@@ -31,12 +31,14 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH:$HOME/nodejs/bin"
 # 执行source .profile或者reboot系统之后环境变量生效
 source .profile
 
-$ node --version
-v10.15.3
-$ npm --version
-6.4.1
-$
+$ npm -v
+6.14.6
+
+$ node -v
+v12.18.4
 ```
+
+本次更新的Node为v12.18.4版本，可以到[HuaweiCloud Mirrors](https://mirrors.huaweicloud.com/nodejs/latest-v12.x/)下载
 
 ### 2. 在本地搭建hexo环境
 
