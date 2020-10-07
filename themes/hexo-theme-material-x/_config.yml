@@ -161,6 +161,7 @@ sidebar:
   - widget: author
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg
     social: true
+    # body:  老梅笔记，好好学习，锻炼身体
   # - widget: plain 
   #   title: 微信公众号
   #   icon: fas fa-bullhorn fa-fw
@@ -242,9 +243,11 @@ social:
   - icon: fas fa-rss
     url: atom.xml
   - icon: fas fa-envelope
-    url: mailto:imeixuhong#qq.com
+    url: mailto:lm#lmbiji.com
   - icon: fab fa-github
     url: https://github.com/meixuhong
+  - icon: fab fa-zhihu
+    url: https://www.zhihu.com/people/wowmarcomei 
   # - icon: fas fa-weibo
   #   url: https://weibo.com/wowmarcomei
 
@@ -293,9 +296,9 @@ valine:
   enable: true # 如果你想用Valine评论系统，请设置enable为true
   volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
   # 还需要在根目录配置文件中添加下面这三行内容
-  # leancloud:
-  #   app_id: 你的appId
-  #   app_key: 你的appKey
+  leancloud:
+    app_id: 
+    app_key: 
   guest_info: nick,mail,link #valine comment header info
   placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
@@ -321,7 +324,7 @@ search:
   azure_index_name:
   azure_query_key:
   # baidu
-  baidu_api_id:
+  baidu_api_id: faf64b3ce9be6c7b7757cd3f66549c55
 
 # Less渲染
 less:
