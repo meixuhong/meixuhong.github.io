@@ -21,8 +21,7 @@ description: 在不断折腾自己开发Django、Flask、部署wordpress后，�
 有时候我们想自定义html页面，不经过Hexo渲染。可以先使用新建页面命令`hexo new page "about"`，这时会在source目录下生成about/about.md文件。可以将其修改为html文件，同时在文件头加上`layout: false`即可。
 
 ```bash
-mv source/about/index.md source/about/index.html
-
+$ mv source/about/index.md source/about/index.html
 ```
 
 编辑index.html文件时在头部加上`layout: false`后使用，编辑自己的html代码即可，eg:
@@ -63,7 +62,7 @@ layout: false
 
 修改next主题下的config.yml文件，将注释部分去掉
 
-```python
+```yaml
 # Wechat Subscriber
 
 wechat_subscriber:
@@ -93,7 +92,7 @@ hexo new page "project"
 
 添加type类型为project如：
 
-```phython
+```yaml
 ---
 
 title: project
@@ -110,7 +109,7 @@ type: "project"
 
 > 编辑主题目录下的_config.yml文件的menu选项，添加project并设置其icon
 
-```phython
+```yaml
 menu:
 
   home: /
@@ -147,7 +146,7 @@ menu_icons:
 ## 3.3 修改字体
 > 修改themes/next/language/zh-Hans.yml 中的menu选项，添加project
 
-```phython
+```yaml
 menu:
 
   home: 首页
@@ -173,7 +172,7 @@ menu:
 > 新建一篇文章,编辑项目文档
 
 ```bash
-hexo new "project1"
+$ hexo new "project1"
 ```
 
 这时会生成source/project/index.md文件，将其修改为source/project/index.html文件，后编写html文件即可

@@ -19,7 +19,7 @@ tags:
 - master分支为发布的github page静态页面所需的所有文件。
 
 
-```
+```bash
 $cd
 $wget https://nodejs.org/dist/v10.15.3/node-v10.15.3-linux-x64.tar.gz
 $tar -xzvf node-v10.15.3-linux-x64.tar.gz
@@ -28,7 +28,7 @@ $mv node-v10.15.3-linux-x64 nodejs
 
 配置环境变量使nodejs与npm生效。以ubuntu16.04环境为例。
 
-```
+```bash
 vi .profile  
 # 在PATH中添加nodejs所在位置路径，其中冒号:表示一个路径的结束，$HOME/nodejs/bin为新加的路径
 PATH="$HOME/bin:$HOME/.local/bin:$PATH:$HOME/nodejs/bin"
@@ -47,7 +47,7 @@ $
 
 在环境变量生效以后，普通账号拥有nodejs与npm程序，使用普通账号基于全局安装hexo
 
-```
+```bash
 $ npm install -g hexo-cli
 ```
 
@@ -60,7 +60,7 @@ $ npm install -g hexo-cli
 3. 创建**hexo**分支
 4. 在本地clone hexo分支
 
-```
+```bash
 $ git clone -b hexo git@github.com:wowmarcomei/wowmarcomei.github.io.git
 $ cd wowmarcomei.github.io.git
 $ hexo init
@@ -68,7 +68,7 @@ $ hexo init
 
 在空仓库中初始化hexo工程，生成会生成hexo的工程文件，包括package.json等如下文件。
 
-```
+```bash
    drwxrwxr-x   6 ubuntu ubuntu   4096 Apr  1 11:10 ./
    drwxr-xr-x  10 ubuntu ubuntu   4096 Apr  1 11:10 ../
    -rw-rw-r--   1 ubuntu ubuntu   1765 Apr  1 11:10 _config.yml
@@ -85,7 +85,7 @@ $ hexo init
 
 _config.yml是网站的配置文件，包括主题选择等等。需要修改该文件指定托管部署地址。
 
-```
+```yaml
 $ vi _config.yml
 
 # Deployment
@@ -98,7 +98,7 @@ deploy:
 
 设置主题，可以选择**hexo-theme-even**主题，参考[github](<https://github.com/ahonn/hexo-theme-even>)主页提示执行如下步骤安装。
 
-```
+```bash
 $ cd wowmarcomei.github.io.git
 $ npm install hexo-renderer-scss --save
 $ git clone https://github.com/ahonn/hexo-theme-even themes/even
@@ -156,10 +156,10 @@ npm install hexo-generator-searchdb --save
 后续继续执行hexo命令来生成静态网站。
 
 ```bash
-hexo clean
-hexo g # 用hexo生成静态网站，位于public目录
-hexo s # 本地生成查看静态网站，启动服务器业务
-hexo d # 生成.deploy_git目录上传到托管网站github相应路径，即上传到master分支
+$ hexo clean
+$ hexo g # 用hexo生成静态网站，位于public目录
+$ hexo s # 本地生成查看静态网站，启动服务器业务
+$ hexo d # 生成.deploy_git目录上传到托管网站github相应路径，即上传到master分支
 ```
 
    > 注：
@@ -175,9 +175,9 @@ hexo d # 生成.deploy_git目录上传到托管网站github相应路径，即上
 上面已经在github上创建了hexo分支，使用git命令提交hexo程序到github的hexo分支。
 
 ```bash
-git add *
-git commit -m "Initial Hexo Branch"
-git push origin hexo # 推送到hexo分支
+$ git add *
+$ git commit -m "Initial Hexo Branch"
+$ git push origin hexo # 推送到hexo分支
 ```
 
 ## 二.在其他电脑搭建Hexo环境
@@ -192,7 +192,7 @@ git push origin hexo # 推送到hexo分支
 
 4. 复制hexo分支代码到本机
 
-```
+```bash
 $ git clone -b hexo git@github.com:wowmarcomei/wowmarcomei.github.io.git
 $ cd wowmarcomei.github.io
 $ git branch #查看当前分支，应该为hexo
@@ -254,19 +254,19 @@ npm install hexo-generator-searchdb --save
 5. 如果需要对Hexo源码进行操作,发布到hexo分支
 
 ```bash
-git add *
-git commit -m "your comment"
-git push origin hexo #推送到远程github的hexo分支
+$ git add *
+$ git commit -m "your comment"
+$ git push origin hexo #推送到远程github的hexo分支
 ```
 
 6. 如果需要更新blog，则使用hexo操作发布到master
 
 ```bash
-hexo clean
-hexo g
-gulp   #压缩html,css,js文件
-hexo s #s为本地server模式
-hexo d #d为deploy部署模式
+$ hexo clean
+$ hexo g
+$ gulp   #压缩html,css,js文件
+$ hexo s #s为本地server模式
+$ hexo d #d为deploy部署模式
 ```
 
 > **如果有更换电脑，直接在新电脑上将hexo分支clone下来即可, master分支可以通过hexo命令生成** 。另外，如果需要定制主题的话，一般是在`header.ejs`与`style.css`下面定制头与css样式。

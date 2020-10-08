@@ -39,7 +39,7 @@ Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包�
 
 ### 2.1 安装Docker
 
-```
+```bash
 # yum install -y yum-utils device-mapper-persistent-data lvm2 epel-release
 # yum-config-manager --add-repo  https://download.docker.com/linux/centos/docker-ce.repo
 # yum install docker-ce
@@ -47,7 +47,7 @@ Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包�
 
 ### 2.2 启动Docker
 
-```
+```bash
 # systemctl enable docker
 # systemctl start docker
 # docker --version
@@ -55,7 +55,7 @@ Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包�
 
 ### 2.3 安装Docker-Compose
 
-```
+```bash
 # curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 # chmod +x /usr/local/bin/docker-compose
 # docker-compose --version
@@ -74,7 +74,7 @@ Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包�
 
 - 通过OpenSSL生成证书与密钥
 
-  ```
+  ```bash
   [root@VM_95_141_centos data]# cd /data/ssl
   [root@VM_95_141_centos ssl]# openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 365 -out ca.crt
   [root@VM_95_141_centos ssl]# ls
@@ -86,19 +86,19 @@ Harbor是VMware公司开源的企业级的Docker Registry管理项目，它包�
 
 - 将生成的私有证书追加到系统的证书管理文件中。
 
-  ```
+  ```bash
   [root@VM_95_141_centos harbor]# cat ssl/ca.crt >> /etc/pki/tls/certs/ca-bundle.crt
   ```
 
 - 重启docker, 该步骤一定不要省略，否则有可能加载私钥失败 
 
-  ```
+  ```bash
   [root@VM_95_141_centos harbor]#systemctl restart docker
   ```
 
 ## 3. 安装Harbor
 
-```
+```bash
 # wget https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.2.tgz
 # tar xzvf harbor-offline-installer-v1.8.2.tgz
 # cd harbor/
@@ -133,7 +133,7 @@ https:
 
 然后先后执行`prepare`与`install.sh`进行配置与安装。
 
-```
+```bash
 [root@VM_95_141_centos harbor]# ./prepare
 prepare base dir is set to /root/harbor
 Generated configuration file: /config/log/logrotate.conf
@@ -172,7 +172,7 @@ Harbor安装成功后，如下图示。我们可以对齐进行启动、停止�
 
 可以通过`docker ps`命令查询当前有哪些docker实例在运行。查询Harbor是否正常运行还可以查询docker-compose运行状态。需要进入Harbor所在目录，执行`docker-compose ps`。
 
-```
+```bash
 [root@VM_95_141_centos harbor]# docker-compose ps
 Name                 Command                  State                        Ports
 -----------------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ registryctl         /harbor/start.sh                 Up (healthy)
 
 ### 4.2 停止与重启Harbor
 
-```
+```bash
 [root@VM_95_141_centos ~]# cd harbor
 [root@VM_95_141_centos harbor]# ls
 common  docker-compose.yml  harbor.v1.8.2.tar.gz  harbor.yml  install.sh  LICENSE  prepare
@@ -219,7 +219,7 @@ Starting proxy       ... done
 
 如果需要修改Harbor的配置，可以先停止Harbor实例，更新 `harbor.yml`文件，再执行 `prepare` 脚本重新构建配置，最终启动Harbor实例:
 
-```
+```bash
 [root@VM_95_141_centos ~]# docker-compose down -v
 [root@VM_95_141_centos ~]# vim harbor.yml
 [root@VM_95_141_centos ~]# prepare
@@ -228,13 +228,13 @@ Starting proxy       ... done
 
 清除Harbor实例的时候会保持镜像数据与数据库在系统中：
 
-```
+```bash
 [root@VM_95_141_centos ~]# docker-compose down -v
 ```
 
 删除Harbor数据库与镜像数据 (如果需要重新安装):
 
-```
+```bash
 [root@VM_95_141_centos ~]# rm -r /data/database
 [root@VM_95_141_centos ~]# rm -r /data/registry
 ```
@@ -243,7 +243,7 @@ Starting proxy       ... done
 
 查看当前镜像:`docker images`
 
-```
+```bash
 [root@VM_95_141_centos harbor]# docker images
 REPOSITORY                      TAG                       IMAGE ID      C   REATED      SIZE
 goharbor/chartmuseum-photon     v0.9.0-v1.8.2             e72f3e685a37  2   weeks ago  130MB

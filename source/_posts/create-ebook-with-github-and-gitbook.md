@@ -58,8 +58,8 @@ $ gitbook serve #编译和预览书籍，实际上会首先调用 gitbook build 
 
 我们只需要在`hexo g`命令执行完之后拷贝Gitbook的`_book`内容到Hexo的`public`目录，然后再执行`Hexo d`发布站点即可，访问Hexo站点的时候访问书籍的话通过网址：`xxx.github.io/_book`,浏览器就会自动调用该目录下的`index.html`文件。也可以尝试将下述命令做成可执行脚本直接运行。
 
-```shell
-hexo clean && hexo g && cp -fr ../[path]/_book/ public/ && hexo d
+```bash
+$ hexo clean && hexo g && cp -fr ../[path]/_book/ public/ && hexo d
 ```
 
 # 2. 发布Book到GitBook.com
@@ -147,9 +147,9 @@ vi 4.理解Python中使用yield进行迭代.md
 完成后通过`git`推送到`github`,`gitbook.com`就会从仓库里自动同步，此时访问gitbook.com即可访问发布的数据。
 
 ```shell
-git add *
-git commit -m "update..."
-git push origin master #推送到master分支，gitbook应该也是绑定到仓库的该分支，否则不能同github同步
+$ git add *
+$ git commit -m "update..."
+$ git push origin master #推送到master分支，gitbook应该也是绑定到仓库的该分支，否则不能同github同步
 ```
 
 ![gitbook](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/Gitbook_overview.jpg)

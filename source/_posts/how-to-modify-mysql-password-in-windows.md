@@ -22,7 +22,7 @@ tags:
 使用管理员权限cmd执行下面命令停止服务
 
 ```powershell
-net stop mysql57
+# net stop mysql57
 ```
 
 ### 1.2 配置mysql跳过安全检查
