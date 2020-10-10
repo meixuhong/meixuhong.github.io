@@ -16,7 +16,7 @@ tags:
 在github上可以用户名创建一个repository: `<username>.github.io`，该仓库即为一个静态页面github page，可以在github上该仓库的设置界面选择主题来设置自己喜欢的`theme`，也可以通过`Hexo`来更新整个github page。为了可以在多台电脑上**均可**管理hexo源码与发布github page博客博文，我们需要使用两个分支：`master` 与 `hexo`。
 
 - hexo分支为源代码文件。
-- master分支为发布的github page静态页面所需的所有文件。
+- master分支为发布的github page静态页面所需的所有文件，设置为默认分支。
 
 
 ```bash
