@@ -1,0 +1,44 @@
+language: node_js # 声明环境为node
+node_js: 
+  - 12.18.4
+
+env: # 环境变量
+ global:
+   - GH_REF: github.com/meixuhong/meixuhong.github.io.git # 我的仓库地址
+
+branches:
+  only:
+    - hexo # 只对hexo分支构建
+
+
+deploy:
+  type: git
+  repo: git@github.com:meixuhong/meixuhong.github.io.git
+  branch: master
+
+
+#设置缓存文件
+cache: npm
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件
+before_script:
+  - git config user.name "lmbiji.com"
+  - git config user.email "lm@lmbiji.com"
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  - hexo generate
+  - echo ${ENV_TEST}
+
+after_script: # 推送到github的部分
+  - cd ./public
+  - git init
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master # 通过之前存在Travis-CI里的token以及github仓库的地址推送到相应的master分支
+# E: Build LifeCycle
+
+
+
+
