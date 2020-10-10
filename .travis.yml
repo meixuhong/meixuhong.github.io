@@ -11,33 +11,24 @@ branches:
     - hexo # 只对hexo分支构建
 
 
-deploy:
-  type: git
-  repo: git@github.com:meixuhong/meixuhong.github.io.git
-  branch: master
+before_install:               # install 阶段之前执行
+  - npm install -g hexo-cli   # 全局安装 Hexo 命令行工具
 
+install:                      # 在安装项目环境阶段需要运行的命令，一条一行，类似的还有 before_install
+  - npm install               # 安装 package.json 中的依赖
 
-#设置缓存文件
-cache: npm
-
-# 设置git提交名，邮箱；替换真实token到_config.yml文件
-before_script:
-  - git config user.name "lmbiji.com"
-  - git config user.email "lm@lmbiji.com"
-
-# 执行清缓存，生成网页操作
-script:
+script:                       # 在构建阶段需要运行的命令，一条一行，类似的还有 before_script、after_script
   - hexo clean
-  - hexo generate
-  - echo ${ENV_TEST}
+  - hexo generate             # Hexo 常规命令，执行清理和生成
 
-after_script: # 推送到github的部分
-  - cd ./public
-  - git init
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master # 通过之前存在Travis-CI里的token以及github仓库的地址推送到相应的master分支
-# E: Build LifeCycle
+after_success:                # script 阶段成功时执行，构建失败不会执行，其他同上
+  - git config --local user.name "lm-travis-ci"
+  - git config --local user.email "lm@lmbiji.com"
+  - sed -i'' "s~git@github.com:~https://${GH_TOKEN}@github.com/~" _config.yml
+  - hexo deploy > /dev/null   # 通过 Hexo 的 deploy 命令部署博客
+
+
+
 
 
 
