@@ -98,5 +98,6 @@ avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/mei.jpg
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:meixuhong/meixuhong.github.io.git
+  # repo: git@github.com:meixuhong/meixuhong.github.io.git
+  repo: https://github.com/meixuhong/meixuhong.github.io.git
   branch: master

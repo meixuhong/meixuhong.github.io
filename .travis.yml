@@ -2,7 +2,7 @@ language: node_js # 声明环境为node
 node_js: 
   - 12.18.4
 
-env: # 环境变量
+env: # 环境变量,这个环境变量其实下面没用到，忽略
  global:
    - GH_REF: github.com/meixuhong/meixuhong.github.io.git # 我的仓库地址
 
@@ -10,33 +10,11 @@ branches:
   only:
     - hexo # 只对hexo分支构建
 
-
 before_install:               # install 阶段之前执行
   - npm install -g hexo-cli   # 全局安装 Hexo 命令行工具
 
 install:                      # 在安装项目环境阶段需要运行的命令，一条一行，类似的还有 before_install
-  - npm install               # 安装 package.json 中的依赖
-  - npm i hexo-renderer-ejs hexo-renderer-less hexo-deployer-git --save
-  - npm i hexo-generator-json-content@2.2.0 --save #本地站点搜索插件
-  - npm i hexo-deployer-git --save
-  - npm i hexo-server --save
-  - npm i hexo-admin --save
-  - npm i hexo-generator-archive --save
-  - npm i hexo-generator-feed --save
-  - npm i hexo-generator-search --save
-  - npm i hexo-generator-tag --save
-  - npm i hexo-deployer-git --save
-  - npm i hexo-generator-sitemap --save
-  - npm i hexo-renderer-marked --save
-  - npm i hexo-renderer-markdown-it --save
-  - npm i hexo-symbols-count-time --save
-  - npm i hexo-generator-sitemap --save #sitemap.xml适合提交给谷歌搜素引擎
-  - npm i hexo-generator-baidu-sitemap --save #baidusitemap.xml适合提交百度搜索引擎
-  - npm i gulp --save
-  - npm i gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
-  - npm i hexo-generator-searchdb --save
-  - npm rebuild node-sass
-
+  - npm install               # 安装 package.json 中的依赖，将package.json中的库指定版本了，所以后续hexo或者npm有更新时不会因为依赖关系导致出错
 
 
 script:                       # 在构建阶段需要运行的命令，一条一行，类似的还有 before_script、after_script
@@ -46,7 +24,7 @@ script:                       # 在构建阶段需要运行的命令，一条一
 after_success:                # script 阶段成功时执行，构建失败不会执行，其他同上
   - git config --local user.name "lm-travis-ci"
   - git config --local user.email "lm@lmbiji.com"
-  - sed -i'' "s~git@github.com:~https://${GH_TOKEN}@github.com/~" _config.yml
+  - sed -i'' "s~git@github.com:~https://${GH_TOKEN}@github.com/~" _config.yml  #GH_TOKEN是在Travis-CI上定义的变量，取值来源于Github上的值
   - hexo deploy > /dev/null   # 通过 Hexo 的 deploy 命令部署博客
 
 
