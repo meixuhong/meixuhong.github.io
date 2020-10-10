@@ -35,7 +35,7 @@ install:                      # 在安装项目环境阶段需要运行的命令
   - npm i gulp --save
   - npm i gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
   - npm i hexo-generator-searchdb --save
-  - npm audit fix
+  - npm rebuild node-sass
 
 
 
