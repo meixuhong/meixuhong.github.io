@@ -101,7 +101,7 @@ if __name__ == '__main__':
 
 ![](https://cdn.jsdelivr.net/gh/meixuhong/cdn//img/day1-1.jpg)
 
-[完整demo下载](/download/README.md)
+[完整demo下载](download/demo.py)
 
 # # 进阶
 
