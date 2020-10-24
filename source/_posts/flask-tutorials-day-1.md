@@ -5,7 +5,7 @@ categories:
   - Flask
 description: Flask系列学习笔记-Day1. 写给自己看的笔记，学到哪里记到哪里？
 tags: 
-  - Flask
+  - flask
 ---
 
 # 1. 准备工作
