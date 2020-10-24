@@ -5,7 +5,7 @@ categories:
   - flask
 description: 一直想学一门web技术，时间与精力关系一直无法真正起步，终于下定决心，还是开始行动起来，每天半小时时间学习总结。
 tags: 
-  - flask
+  - Flask
 ---
 
 # # 准备工作
@@ -48,9 +48,9 @@ $pipenv shell
 3. 安装Flask库，可以通过pip安装
 
 ```bash
-meixuhong@meixuhong:/mnt/d/Project/Flask_day1$ pipenv shell
-(Flask_day1) meixuhong@meixuhong:/mnt/d/Project/Flask_day1$ pip install flask
-(Flask_day1) meixuhong@meixuhong:/mnt/d/Project/Flask_day1$ pip list
+lm@lm:/mnt/d/Project/Flask_day1$ pipenv shell
+(Flask_day1) lm@lm:/mnt/d/Project/Flask_day1$ pip install flask
+(Flask_day1) lm@lm:/mnt/d/Project/Flask_day1$ pip list
 Package      Version
 ------------ -------
 click        7.1.2
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-![](https://cdn.jsdelivr.net/gh/meixuhong/cdn//img/day1-1.jpg)
+![](https://cdn.jsdelivr.net/gh/lm/cdn//img/day1-1.jpg)
 
 [完整demo代码下载](download/day1-demo.py)
 
@@ -118,6 +118,34 @@ def hello_user(name,id):
     return 'Hello {} {}'.format(name,id)
 ```
 
-![](https://cdn.jsdelivr.net/gh/meixuhong/cdn//img/day1-2.jpg)
+![](https://cdn.jsdelivr.net/gh/lm/cdn/img/day1-2.jpg)
 
-2. 通过Flask-Script模块，可以通过命令行的形式来操作Flask.
+2. 通过Flask-Script模块，可以在终端通过命令行的形式来操作Flask.
+
+- 命令行操作flask：
+
+```bash
+ $ python demo.py runserver -h 0.0.0.0 -p 5000 -d  # -d表示debug
+```
+
+- 通过Flask-Script命令行进入flask交互，自动导入demo.py内容：
+```bash
+ $ python demo.py shell
+```
+
+- 使用Flask-Script需要将对Flask对象实例化一个`Manager`对象
+
+```python
+# 当调用app = Flask(_name_)的时候，创建了Flask程序应用对象app
+app = Flask(__name__)
+
+# 定义一个Manager对象manager,传入参数app，即manager具备使用对Flask对象直接管理功能
+manager = Manager(app)
+
+if __name__ == '__main__':
+    # 需要改为manager来管理，而不是app本身管理
+    # app.run(debug=True)
+    manager.run()
+```
+
+> 使用manager = Manager(app)来定义一个管理对象管理Flask的对象app，在主函数中app.run()要改为manager.run(),因为以前是flask对象现在是Manager对象
