@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
 # # 进阶
 
-1. 动态url
+### 1. 动态url
 
 很多时候url是动态变化的，这个时候可以通过变量传递，有两点注意事项：
 
@@ -120,9 +120,9 @@ def hello_user(name,id):
 
 ![](https://cdn.jsdelivr.net/gh/lm/cdn/img/day1-2.jpg)
 
-2. 通过Flask-Script模块，可以在终端通过命令行的形式来操作Flask.
+2. 命令行操作flask
 
-- 命令行操作flask：
+- 通过Flask-Script模块，可以在终端通过命令行的形式来操作Flask：
 
 ```bash
  $ python demo.py runserver -h 0.0.0.0 -p 5000 -d  # -d表示debug
