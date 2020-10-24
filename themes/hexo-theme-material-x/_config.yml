@@ -97,6 +97,10 @@ menu_desktop:
     # icon: fas python
     url: /categories/python/
     rel: nofollow
+  - name: Flask
+    # icon: fas python
+    url: /categories/flask/
+    rel: nofollow    
   - name: Hexo
     # icon: fas python
     url: /categories/hexo/
@@ -127,6 +131,10 @@ menu_mobile:
     # icon: fas python
     url: /categories/python/
     rel: nofollow
+  - name: Flask
+    # icon: fas python
+    url: /categories/flask/
+    rel: nofollow      
   - name: Hexo
     # icon: fas python
     url: /categories/hexo/

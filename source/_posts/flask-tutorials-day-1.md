@@ -1,9 +1,9 @@
 ---
-title: Flask系列学习笔记
+title: Flask系列学习笔记-Day1
 date: 2020-10-24 20:00:51
 categories: 
   - flask
-description: Flask系列学习笔记-Day1. 写给自己看的笔记，学到哪里记到哪里？
+description: 一直想学一门web技术，时间与精力关系一直无法真正起步，终于下定决心，还是开始行动起来，每天半小时时间学习总结。
 tags: 
   - flask
 ---
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 
 ![](https://cdn.jsdelivr.net/gh/meixuhong/cdn//img/day1-1.jpg)
 
-[完整demo下载](download/demo.py)
+[完整demo代码下载](download/day1-demo.py)
 
 # # 进阶
 
