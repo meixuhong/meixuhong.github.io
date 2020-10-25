@@ -94,12 +94,13 @@ def index():
 4. 启动应用
 
 ```python
+# __name__ 是当前模块名，当模块被直接运行时模块名为 __main__, 即是说，当运行该demo.py模块时，执行下面的命令
 # Flask应用程序实例的run方法启动WEB服务器,设置参数debug=True,则修改代码后可以不用重新启动服务器做调试
 if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-![](https://cdn.jsdelivr.net/gh/lm/cdn//img/day1-1.jpg)
+![](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/day1-1.jpg)
 
 [完整demo代码下载](download/day1-demo.py)
 
@@ -118,7 +119,7 @@ def hello_user(name,id):
     return 'Hello {} {}'.format(name,id)
 ```
 
-![](https://cdn.jsdelivr.net/gh/lm/cdn/img/day1-2.jpg)
+![](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/day1-2.jpg)
 
 2. 命令行操作flask
 
@@ -149,3 +150,5 @@ if __name__ == '__main__':
 ```
 
 > 使用manager = Manager(app)来定义一个管理对象管理Flask的对象app，在主函数中app.run()要改为manager.run(),因为以前是flask对象现在是Manager对象
+
+[完整demo代码下载](download/day1-demo-script.py)
