@@ -151,4 +151,4 @@ if __name__ == '__main__':
 
 > 使用manager = Manager(app)来定义一个管理对象管理Flask的对象app，在主函数中app.run()要改为manager.run(),因为以前是flask对象现在是Manager对象
 
-[完整demo代码下载](download/day1-demo-script.py)
+[完整flask-script-demo代码下载](download/day1-demo-script.py)
