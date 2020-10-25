@@ -121,7 +121,7 @@ def hello_user(name,id):
 
 ![](https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/day1-2.jpg)
 
-2. 命令行操作flask
+### 2. 命令行操作flask
 
 - 通过Flask-Script模块，可以在终端通过命令行的形式来操作Flask：
 
