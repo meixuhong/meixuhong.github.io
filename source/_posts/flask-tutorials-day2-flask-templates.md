@@ -26,11 +26,58 @@ return render_template('index.html')
 
 #  # Jinja语法规则
 
-- 变量使用双括号`{{ }}`来定义，如`{{ movies}}`, 这个变量传递到路由函数里去
+- 变量使用**双括号**来定义， 这个变量通过路由函数传递给模板
 
-- `if`, `for`等语句使用`{%  %}`来指定，如`{% if movies %}`
+  视图函数中定义：
 
-- `Jinja`模板中使用注释的话，需要以`{# 这是注释部分 #}`进行
+  ```python
+  @app.route('/movies')
+  def movies():
+      # user与movies是传递给模板watchlist.html中的变量，user1与movies1是flask app中定义的全局变量值
+      return render_template('watchlist.html',user = user1, movies = movies1)  
+  ```
+
+    模板中使用双括号定义：
+
+    ```html
+    <li> {{movie.name}}, {{movie.year}} </li>
+    ```
+
+- `if`, `for`等语句使用**大括号与百分号**来指定
+
+  视图函数中定义：
+
+  ```python
+  @app.route('/movies')
+  def movies():
+      # user与movies是传递给模板watchlist.html中的变量，user1与movies1是上面定义的全局变量值
+      return render_template('watchlist.html',user = user1, movies = movies1)    
+  ```
+
+  模板中使用括号与%定义：
+
+  ```html
+  <body>
+      {# <!-- 变量过滤使用符号 | --> #}
+      <h2>{{ user.username }}'s Watchlist ({{ movies|length }}):</h2>
+      <ul>
+          {# <!-- for语句控制，变量使用双括号{{}}，变量通过render_template函数中传递 --> #}
+          {% for movie in movies %}
+          <li> {{movie.name}}, {{movie.year}} </li>
+          {% endfor %}
+      </ul>
+      {# 这里的id是demo.py模块中login视图函数里定义的变量,ref为非定义变量故以查询字符串传递 #}
+      {# 所以最终生成的url为login视图函数里的url:/mei/login/1/?ref=123 #}
+      <p><a href="{{ url_for('login',ref='123',id=1)}}">登录</a></p>
+  
+  </body>
+  ```
+
+- `Jinja`模板中使用注释的话，需要以**大括号与#**进行
+
+  ```html
+  {# Jinja2模板中注释格式 #}
+  ```
 
 - 路由函数(也叫视图函数)中返回`render_template`进行渲染,可以指定参数，参数是传递给`html`模板中的变量，如：
 
@@ -93,7 +140,11 @@ def my_list(page):
 
 ### 	在前端模板中使用`url_for`
 
-> 模板中的`url_for`跟后台视图函数中的`urf_for`使用起来基本一模一样的，也是传递视图函数的名字，也可以传递参数，不同与后端Python之处在于**需要在`url_for`左右两边加上一个`{{ }}`**。
+> 模板中的`url_for`跟后台视图函数中的`urf_for`使用起来基本一模一样的，也是传递视图函数的名字，也可以传递参数，不同与后端Python之处在于**需要在`url_for`左右两边加上双括号**。
+
+```html
+<p><a href="{{ url_for('login')}}">登录</a></p>
+```
 
 **如果传递的参数在那个视图中`url`中定义了，那么这个参数就会以路径参数的形式给`url`。 如果传递的参数没有在`url`中定义，那么这些参数将会以查询字符串的形式放到`url`中**。
 
