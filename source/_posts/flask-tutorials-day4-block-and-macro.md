@@ -245,4 +245,4 @@ Jinja2的宏不但能访问调用者语句块的内容，还能给调用者传�
 
 上例中，程序会按顺序寻找模板文件，第一个被找到的模板即被加载，而其后的模板都会被忽略。如果都没找到，那整个语句都会被忽略。
 
-[day4完整demo代码下载](download/day4-demo.zip)
+[day4完整demo代码下载](download/day4-Flask-demo.zip)
