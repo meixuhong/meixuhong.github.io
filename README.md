@@ -280,3 +280,16 @@ git push origin hexo # 推送到hexo分支
     public/
     .deploy*/
    ```
+   
+## 三.通过Git直接部署
+
+由于当前的project加入travis-ci，可以协助编译hexo，所以我们只需修改`_post`下的Markdown文件即可自动触发hexo编译。
+
+```shell
+#1.在_post目录下新增“parse-the-kindle-markup-files-by-using-python.md”文件
+#2.写完文章后，提交github即可
+
+git add *
+git commit -m "你的更新"
+git push origin hexo
+```
