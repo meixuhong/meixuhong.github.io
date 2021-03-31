@@ -11,5 +11,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://lmbiji.com/sitemap.xml
-Sitemap: https://lmbiji.com/baidusitemap.xml
+Sitemap: https://meixuhong.com/sitemap.xml
+Sitemap: https://meixuhong.com/baidusitemap.xml

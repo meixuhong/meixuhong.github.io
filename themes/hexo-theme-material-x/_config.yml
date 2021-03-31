@@ -59,8 +59,8 @@ cover:
   scheme: search    # 后期将会提供多种封面方案
   height: half      
   # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
-  title: "老梅笔记"
-  subtitle: "Web, Python, SQL等IT笔记"
+  title: "梅旭红"
+  subtitle: "网络、云计算、存储、容器、大数据笔记"
   # title: '<a href="/">老梅笔记</a>'
   # logo: assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
   search_placeholder: '搜一搜'
@@ -179,7 +179,7 @@ sidebar:
   - widget: plain 
     title: 微信公众号
     icon: fas fa-blog
-    body: '公众号《老梅笔记》：mei-idea，个人微信: wowmarcomei'
+    body: '公众号《梅旭红》：mei-idea，个人微信: wowmarcomei'
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/qc.jpg
 
   # - widget: plain
@@ -251,7 +251,7 @@ social:
   - icon: fas fa-rss
     url: atom.xml
   - icon: fas fa-envelope
-    url: mailto:lm#lmbiji.com
+    url: mailto:lm#meixuhong.com
   - icon: fab fa-github
     url: https://github.com/meixuhong
   - icon: fab fa-zhihu

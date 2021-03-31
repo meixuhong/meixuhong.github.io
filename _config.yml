@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 老梅笔记
-subtitle: Web, Python, SQL等IT笔记
+title: 梅旭红
+subtitle: 网络、云计算、存储、容器、大数据笔记
 description:
-keywords: ICT, 云计算, 大数据, Docker, K8s, Python, Flask, 运维
+keywords: ICT, 网络,云计算, 大数据, Docker, K8s, 数据库, 运维
 author: 梅旭红
 #language: zh-cn
 language: 
@@ -15,7 +15,7 @@ timezone: "Asia/Shanghai"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lmbiji.com
+url: https://meixuhong.com
 root: /
 permalink: /:title.html
 permalink_defaults:
