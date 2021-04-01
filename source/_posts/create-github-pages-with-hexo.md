@@ -2,7 +2,7 @@
 title: 使用Hexo搭建Github Page
 date: 2016-07-06 15:37:51
 categories: 
-  - hexo
+  - web
 description: 在github上可以用户名创建一个repository,该仓库即为一个静态页面github page，可以在github上该仓库的设置界面选择主题来设置自己喜欢的主题，也可以通过`Hexo`来更新整个github page。为了可以在多台电脑上均可管理hexo源码与发布github page博客博文，我们需要使用两个分支：`master` 与 `hexo`。
 tags: 
   - Hexo
