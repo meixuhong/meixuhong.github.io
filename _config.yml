@@ -4,9 +4,9 @@
 
 # Site
 title: 梅旭红
-subtitle: 网络、云计算、存储、容器、大数据笔记
+subtitle: IT技术笔记
 description:
-keywords: ICT, 网络,云计算, 大数据, Docker, K8s, 数据库, 运维
+keywords: ICT,网络,云计算,大数据,Docker,K8s,数据库,Mysql,GaussDB,Python,运维
 author: 梅旭红
 #language: zh-cn
 language: 
