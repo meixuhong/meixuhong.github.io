@@ -155,7 +155,7 @@ sidebar:
   - widget: author
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg
     social: true
-    # body:  老梅笔记，好好学习，锻炼身体
+    # body:  欢迎添加个人微信号mxh20999
   # - widget: plain 
   #   title: 微信公众号
   #   icon: fas fa-bullhorn fa-fw
@@ -165,7 +165,7 @@ sidebar:
   - widget: plain 
     title: 微信公众号
     icon: fas fa-blog
-    body: '公众号《梅旭红》：mei-idea，个人微信: mxh20999'
+    body: '微信扫码关注个人公众号'
     avatar: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/qc.jpg
 
   # - widget: plain
