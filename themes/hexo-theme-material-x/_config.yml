@@ -19,7 +19,7 @@ style: pure        # pure: 导航栏和标题栏背景是白色
 ############################### 服务开关 ###############################
 scrollreveal: true
 nodewaves: true
-busuanzi: true
+busuanzi: false
 # fastclick: true
 
 
@@ -66,22 +66,27 @@ cover:
   search_placeholder: '搜一搜'
   # 主页封面菜单
   # features:
-  #   - name: 首页
-  #     # icon: fas fa-rss
-  #     url: /
-  #   - name: Python
-  #     url: /categories/Python/
-  #   - name: 归档
-  #     url: /archives/
-
-  #   - name: 友链
-  #     icon: fas fa-link
-  #     url: friends/
-  #     rel: nofollow
-  #   - name: 关于
-  #     icon: fas fa-info-circle
-  #     url: about/
-  #     rel: nofollow
+  # - name: 首页
+  #   # icon: fas home
+  #   url: /
+  # - name: 云计算
+  #   # icon: fas python
+  #   url: /categories/cloud/
+  # - name: 网络
+  #   # icon: fas python
+  #   url: /categories/network/
+  # - name: 大数据
+  #   # icon: fas python
+  #   url: /categories/mapreduce/        
+  # - name: Web
+  #   # icon: fas python
+  #   url: /categories/web/
+  # - name: Python
+  #   # icon: fas python
+  #   url: /categories/python/
+  # - name: 归档
+  #   # icon: fas fa-archive
+  #   url: /archives/
 
 
 # 桌面端导航栏菜单
@@ -92,61 +97,46 @@ menu_desktop:
   - name: 云计算
     # icon: fas python
     url: /categories/cloud/
-    rel: nofollow
   - name: 网络
     # icon: fas python
     url: /categories/network/
-    rel: nofollow    
   - name: 大数据
     # icon: fas python
-    url: /categories/mapreduce/
-    rel: nofollow           
+    url: /categories/mapreduce/        
   - name: Web
     # icon: fas python
     url: /categories/web/
-    rel: nofollow          
   - name: Python
     # icon: fas python
     url: /categories/python/
-    rel: nofollow      
   - name: 归档
     # icon: fas fa-archive
     url: /archives/
-    rel: nofollow
+
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
   - name: 首页
     # icon: fas home
     url: /
-  # - name: 分类
-  #   icon: fas fa-folder-open
-  #   url: /categories/
-  #   rel: nofollow
+  - name: 云计算
+    # icon: fas python
+    url: /categories/cloud/
+  - name: 网络
+    # icon: fas python
+    url: /categories/network/
+  - name: 大数据
+    # icon: fas python
+    url: /categories/mapreduce/        
+  - name: Web
+    # icon: fas python
+    url: /categories/web/
   - name: Python
     # icon: fas python
     url: /categories/python/
-    rel: nofollow
-  - name: Flask
-    # icon: fas python
-    url: /categories/flask/
-    rel: nofollow      
-  - name: Hexo
-    # icon: fas python
-    url: /categories/hexo/
-    rel: nofollow    
-  - name: Sql
-    # icon: fas python
-    url: /categories/sql/
-    rel: nofollow    
-  - name: Docker
-    # icon: fas python
-    url: /categories/docker/
-    rel: nofollow      
   - name: 归档
     # icon: fas fa-archive
     url: /archives/
-    rel: nofollow
 
 
 
