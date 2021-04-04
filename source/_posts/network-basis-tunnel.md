@@ -1,5 +1,5 @@
 ---
-title: 网络扫描系列：5、隧道技术（VPN、IPSec、VxLAN)
+title: 网络扫盲系列：5、隧道技术（VPN、IPSec、VxLAN)
 date: 2021-04-09 07:10:00
 description: 
 categories: 
@@ -9,4 +9,4 @@ tags:
 cover: true
 ---
 
-网络扫描系列：5、隧道技术（VPN、IPSec、VxLAN)
+记录下网络基础知识，系列5：隧道技术（VPN、IPSec、VxLAN等)。

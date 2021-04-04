@@ -9,4 +9,4 @@ tags:
 cover: true
 ---
 
-网络扫盲系列：2、数据二层交换（VLAN与smartlink）
+记录下网络基础知识，系列2：数据二层交换（VLAN与smartlink）。
