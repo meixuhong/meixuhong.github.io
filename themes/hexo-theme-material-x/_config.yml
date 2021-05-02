@@ -37,7 +37,7 @@ music:
   autoplay: false   # 自动播放
 
 # 友链页头像占位图
-avatar_placeholder: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/meixuhong.jpg
+avatar_placeholder: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg
 
 # 日期格式 http://momentjs.com/docs/
 date_format: 'YYYY-MM-DD' # 文章发布日期的格式
