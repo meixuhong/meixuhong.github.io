@@ -10,7 +10,7 @@ menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
-  类别: /categories/ || fas fa-folder-open
+  分类: /categories/ || fas fa-folder-open
   清单||fas fa-list:
     Music: /music/ || fas fa-music
     Movie: /movies/ || fas fa-video
@@ -24,7 +24,7 @@ hide_sidebar_menu_child: false
 # --------------------------------------
 
 # highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
-highlight_theme:  mac 
+highlight_theme:  mac light
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -43,8 +43,15 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
+  # fab fa-github: https://github.com/ || Github
+  # fab fa-weixin: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || Wechat
+  # fab fa-zhihu: https://zhihu.com || Zhihu
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+  iconfont icon-weixin: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
+  iconfont icon-zhihu: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
+  iconfont icon-bilibili-line1: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
+  iconfont icon-telegram: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
+  
 
 # search (搜索)
 # --------------------------------------
@@ -410,9 +417,10 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2016
   custom_text:
-  copyright: true # Copyright of theme and framework
+      <p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Hosted-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p>
+  copyright: false # Copyright of theme and framework
 
 # Analysis
 # --------------------------------------
@@ -846,7 +854,9 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'">
+
   bottom:
     # - <script src="xxxx"></script>
 
