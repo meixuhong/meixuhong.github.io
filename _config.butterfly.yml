@@ -88,7 +88,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/favicon.ico
 
 # Avatar (頭像)
 avatar:
@@ -370,7 +370,7 @@ facebook_comments:
 twikoo:
   envId: meixuhong-3ge8iwrs2d6883ea
   region:
-  visitor: false
+  visitor: true
   option:
 
 # Chat Services
