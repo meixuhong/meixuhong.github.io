@@ -1,0 +1,6 @@
+# - class_name: user-map
+#   id_name: user-map
+#   name: 訪客地圖
+#   icon: fas fa-heartbeat
+#   order:
+#   html: '<img src="https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg"  alt="上海鲜花港 - 郁金香" />'
