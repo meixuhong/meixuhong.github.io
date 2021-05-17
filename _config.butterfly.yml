@@ -11,9 +11,9 @@ menu:
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  清单||fas fa-list:
-    Music: /music/ || fas fa-music
-    Movie: /movies/ || fas fa-video
+  # 清单||fas fa-list:
+  #   Music: /music/ || fas fa-music
+  #   Movie: /movies/ || fas fa-video
   # Link: /link/ || fas fa-link
   # About: /about/ || fas fa-heart
 
@@ -64,7 +64,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: true
+  enable: false
 
 # Math (數學)
 # --------------------------------------
@@ -657,6 +657,7 @@ aside:
   card_announcement:
     enable: true
     content: This is my Blog
+    img: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
