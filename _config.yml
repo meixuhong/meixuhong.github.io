@@ -75,8 +75,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
-# theme: hexo-theme-butterfly
+# theme: butterfly
+theme: hexo-theme-butterfly
 
 # 配置网站图标favicon与作者图标avatar，适用于hexo-theme-material-x
 favicon: https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/favicon.ico
