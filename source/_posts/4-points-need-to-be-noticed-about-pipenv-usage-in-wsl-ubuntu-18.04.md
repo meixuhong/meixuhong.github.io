@@ -1,13 +1,14 @@
 ---
 title: WSL Ubuntu 18.04上使用pipenv的4个关键点
 date: 2021-05-03 08:01:41
+updated: 2021-05-03 08:01:41
 description: 自从MicroSoft拥抱Linux以来，除了微软股票大涨以外，其开源动作更是不断，VScode俨然已成为最流行的开源IDE/文本编辑器，WSL更像是王炸，从此大家再也不需要安装双系统了吧。本文简要总结安装WSL Ubuntu 18.04后，pipenv的基本使用笔记。
 categories: 
-	- python
+	- Python
 tags:
 	- WSL
 	- Python
-cover: true
+cover: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/linux-windows.png
 ---
 
 > 自从MicroSoft拥抱Linux以来，除了微软股票大涨以外，其开源动作更是不断，VScode俨然已成为最流行的开源IDE/文本编辑器，WSL更像是王炸，从此大家再也不需要安装双系统了吧。本文简要总结安装WSL Ubuntu 18.04后，pipenv的基本使用笔记。

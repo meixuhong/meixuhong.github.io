@@ -2,12 +2,13 @@
 title: 使用Hexo搭建Github Page
 date: 2016-07-06 15:37:51
 categories: 
-  - web
+  - Web
 description: 在github上可以用户名创建一个repository,该仓库即为一个静态页面github page，可以在github上该仓库的设置界面选择主题来设置自己喜欢的主题，也可以通过`Hexo`来更新整个github page。为了可以在多台电脑上均可管理hexo源码与发布github page博客博文，我们需要使用两个分支：`master` 与 `hexo`。
 tags: 
   - Hexo
   - Github
   - Git
+cover: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/hexo-cover.png
 ---
 
 > Github Pages是Github免费提供的静态网站服务，我们可以将自己的静态网站推送到Github仓库，让它提供网站服务，**免去自己申请主机服务器的困(费)扰(用)**。不过默认对外提供的域名为`<username>.github.io`，如果希望使用自己的域名如`baidu.com`，则需要对该域名进行`CNAME`解析到`<username>.github.io`.
