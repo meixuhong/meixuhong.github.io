@@ -47,10 +47,10 @@ social:
   # fab fa-weixin: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || Wechat
   # fab fa-zhihu: https://zhihu.com || Zhihu
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
-  iconfont icon-weixin: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
-  iconfont icon-zhihu: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
-  iconfont icon-bilibili-line1: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
-  iconfont icon-telegram: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || QQ
+  iconfont icon-weixin: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || wechat
+  iconfont icon-zhihu: https://www.zhihu.com/people/wowmarcomei || zhihu
+  iconfont icon-bilibili-line1: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || bilibili
+  iconfont icon-telegram: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg || telegram
   
 
 # search (搜索)
@@ -184,7 +184,7 @@ index_post_content:
 # toc (目錄)
 toc:
   enable: true
-  number: true
+  number: false
   style_simple: false
 
 post_copyright:
