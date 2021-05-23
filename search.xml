@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>WSL Ubuntu 18.04上使用pipenv的4个关键点</title>
+    <url>//4-points-need-to-be-noticed-about-pipenv-usage-in-wsl-ubuntu-18.04.html</url>
+    <content><![CDATA[<blockquote>
+<p>自从MicroSoft拥抱Linux以来，除了微软股票大涨以外，其开源动作更是不断，VScode俨然已成为最流行的开源IDE/文本编辑器，WSL更像是王炸，从此大家再也不需要安装双系统了吧。本文简要总结安装WSL Ubuntu 18.04后，pipenv的基本使用笔记。</p>
+</blockquote>
+<h2 id="1-Pipenv的常见命令"><a href="#1-Pipenv的常见命令" class="headerlink" title="1.Pipenv的常见命令"></a>1.Pipenv的常见命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pipenv install  # 安装虚拟环境 ，如果工程目录下有Pipfile则会自动安装，如果没有则会先生成Pipfile</span><br><span class="line">pipenv shell    # 进入虚拟环境</span><br><span class="line">exit            # 退出虚拟环境</span><br><span class="line">pipenv --rm     # 删除整个环境  不会删除pipfile</span><br><span class="line">pipenv -h 	    # 查看帮助</span><br><span class="line">pipenv install requests==2.13.0 #安装指定版本包</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-以root账号执行profile使环境变量生效"><a href="#2-以root账号执行profile使环境变量生效" class="headerlink" title="2.以root账号执行profile使环境变量生效"></a>2.以root账号执行profile使环境变量生效</h2><p>使用WSL基本都是没有使用<code>bash --login</code>的，这就导致基本环境变量没有加载，需要我们手动加载使环境变量生效。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo -s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">source</span> ~/.profile</span></span><br></pre></td></tr></table></figure>
+
+<p>否则会出现找不到<code>pipenv</code>,参考自<a href="https://superuser.com/questions/1432768/how-to-properly-install-pipenv-on-wsl-ubuntu-18-04">superuser</a>。</p>
+<h2 id="3-修改项目的Pipfile中的url为国内镜像地址"><a href="#3-修改项目的Pipfile中的url为国内镜像地址" class="headerlink" title="3.修改项目的Pipfile中的url为国内镜像地址"></a>3.修改项目的Pipfile中的url为国内镜像地址</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[[source]]</span><br><span class="line">name = &quot;pypi&quot;</span><br><span class="line">url = &quot;https://repo.huaweicloud.com/repository/pypi/simple&quot;</span><br><span class="line">verify_ssl = true</span><br><span class="line"></span><br><span class="line">[dev-packages]</span><br><span class="line"></span><br><span class="line">[packages]</span><br><span class="line"></span><br><span class="line">[requires]</span><br><span class="line">python_version = &quot;3.6&quot;</span><br></pre></td></tr></table></figure>
+
+<p>url可以修改为华为镜像<a href="https://repo.huaweicloud.com/repository/pypi/simple%EF%BC%8C%E6%88%96%E8%80%85%E9%98%BF%E9%87%8C%E9%95%9C%E5%83%8Fhttps://mirrors.aliyun.com/pypi/simple%E3%80%82">https://repo.huaweicloud.com/repository/pypi/simple，或者阿里镜像https://mirrors.aliyun.com/pypi/simple。</a></p>
+<p>或者，在环境变量中指定源，这样可以一劳永逸的解决镜像问题。</p>
+<p>在<code>用户环境变量文件(~/.bash_profile，或者~/.profile)</code>或者<code>系统环境变量文件(/etc/profile)</code>中添加都行。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PIPENV_TEST_INDEX=https://repo.huaweicloud.com/repository/pypi/simple</span><br><span class="line">export PATH=$PIPENV_TEST_INDEX:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>编辑完成之后，执行<code>source ~/.profile</code>生效环境变量。</p>
+<h2 id="4-修改Pipenv的虚拟环境的默认生成目录"><a href="#4-修改Pipenv的虚拟环境的默认生成目录" class="headerlink" title="4.修改Pipenv的虚拟环境的默认生成目录"></a>4.修改Pipenv的虚拟环境的默认生成目录</h2><p>共有三种方法：</p>
+<ol>
+<li><code>export PIPENV_VENV_IN_PROJECT=1</code> 设置这个环境变量，pipenv会在当前目录下创建.venv的目录，以后都会把模块装到这个.venv下。</li>
+<li>自己在项目目录下手动创建.venv的目录，然后运行 <code>pipenv run</code> 或者 <code>pipenv shell </code>pipenv都会在.venv下创建虚拟环境。</li>
+<li>设置<code>WORKON_HOME</code>到其他的地方 （<strong>如果当前目录下已经有.venv,此项设置失效</strong>）</li>
+</ol>
+<p>我喜欢通过设置<code>WORKON_HOME</code>到指定目录，在<code>~/.profile</code>下增加环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export WORKON_HOME=/home/laomei/pipenv_home</span><br><span class="line">export PATH=$WORKON_HOME:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>然后生效环境变量<code>source ~/.profile</code>即可。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>WSL</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用GitHub与Gitbook制作自己的书籍</title>
     <url>//create-ebook-with-github-and-gitbook.html</url>
     <content><![CDATA[<p>最近在学习网络爬虫知识，经常需要做笔记，有几个选择。</p>
