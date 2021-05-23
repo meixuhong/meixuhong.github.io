@@ -32,7 +32,7 @@
 <p>然后生效环境变量<code>source ~/.profile</code>即可。</p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>WSL</tag>
@@ -112,7 +112,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>web</category>
+        <category>Web</category>
       </categories>
       <tags>
         <tag>Gitbook</tag>
@@ -235,7 +235,7 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>web</category>
+        <category>Web</category>
       </categories>
       <tags>
         <tag>Github</tag>
@@ -264,7 +264,7 @@
 <h3 id="1-6-登录mysql"><a href="#1-6-登录mysql" class="headerlink" title="1.6 登录mysql"></a>1.6 登录mysql</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#执行下面命令，输入密码即可登录</span></span><br><span class="line">&gt; mysql <span class="literal">-u</span> root <span class="literal">-p</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>sql</category>
+        <category>SQL</category>
       </categories>
       <tags>
         <tag>Mysql</tag>
@@ -315,7 +315,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/github-naked-domain.jpg"></p>
 ]]></content>
       <categories>
-        <category>web</category>
+        <category>Web</category>
       </categories>
       <tags>
         <tag>Github</tag>
@@ -353,7 +353,7 @@
 <p>源码开源在<a href="https://github.com/wowmarcomei/kindle_notes_export">github</a>，欢迎star与使用。</p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -486,7 +486,7 @@
 
 ]]></content>
       <categories>
-        <category>cloud</category>
+        <category>Cloud</category>
       </categories>
       <tags>
         <tag>Docker</tag>
