@@ -7,7 +7,7 @@ tags:
 categories: 
 	- Web
 description: 目标：1) 通过Github Pages搭建自己的静态网站.  2)将自己购买的域名解析到Github Pages.  3) 将顶级域名example.com和子域名www.example.com解析到Github Pages。
-cover: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img/github_pages.jpeg
+cover: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/github_pages.jpeg
 ---
 
 
