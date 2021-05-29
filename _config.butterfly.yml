@@ -196,12 +196,12 @@ post_copyright:
 reward:
   enable: enable
   QR_code:
-    - img: https://cdn.jsdelivr.net/gh/zjwo/CDN@master/img/social/qq.jpg
+    - img: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/wechat_pay.jpg
       link:
       text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/alipay.jpg
+      link:
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.

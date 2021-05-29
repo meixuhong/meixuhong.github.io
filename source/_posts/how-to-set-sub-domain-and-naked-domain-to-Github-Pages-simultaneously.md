@@ -1,6 +1,7 @@
 ---
 title: 如何同时设置子域名和顶级域名到Github Pages
 date: 2020-10-04 09:09:03
+updated: 2020-10-04 09:09:03
 tags:
 	- Github
 	- DNS

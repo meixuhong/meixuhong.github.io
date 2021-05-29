@@ -1,6 +1,7 @@
 ---
 title: Windows下修改Mysql密码
 date: 2018-07-21 11:27:51
+updated: 2018-07-21 11:27:51
 categories: 
 	- SQL
 	
