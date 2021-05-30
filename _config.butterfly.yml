@@ -165,8 +165,8 @@ post_end:
   enable: true
   wechat:
     enable: true
-    cdn_qrcode: https://i.loli.net/2020/02/15/SDRF87I6ohlyVk1.jpg
-    local_default_qrcode: /assets/images/weixin/wechat-gzh.png
+    cdn_qrcode: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/qrcode_for_gh_mei.jpg
+    local_default_qrcode: https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/qrcode_for_gh_mei.jpg
     description: 欢迎关注微信公众号【梅旭红】
 
 # wordcount (字數統計)
