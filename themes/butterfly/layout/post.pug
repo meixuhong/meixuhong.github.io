@@ -6,6 +6,12 @@ block content
       include includes/header/post-info.pug
 
     article#article-container.post-content!=page.content
+    
+    if theme.post_end.enable
+      include includes/post/post-end.pug
+    if theme.post_end.wechat.enable
+      include includes/post/post-end-wechat.pug 
+
     include includes/post/post-copyright.pug
     .tag_share
       if (theme.post_meta.post.tags)

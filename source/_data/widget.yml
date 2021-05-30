@@ -1,6 +1,6 @@
-# - class_name: user-map
-#   id_name: user-map
-#   name: 訪客地圖
-#   icon: fas fa-heartbeat
-#   order:
-#   html: '<img src="https://cdn.jsdelivr.net/gh/meixuhong/cdn/img/avatr.jpg"  alt="上海鲜花港 - 郁金香" />'
+- class_name: wechat-gp
+  id_name: wechat-gp
+  name: 微信公众号
+  icon: iconfont icon-weixin
+  order: -1
+  html: '<img class="aside-img" src="https://cdn.jsdelivr.net/gh/meixuhong/cdn@master/img-hosting/wechat_gp_search-min.png"/>'
