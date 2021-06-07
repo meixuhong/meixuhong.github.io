@@ -439,7 +439,7 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics:
+google_analytics: G-F2XPHMC1HV
 
 # Tencent Analytics ID
 # https://mta.qq.com
@@ -798,6 +798,15 @@ note:
 
 # other
 # --------------------------------------
+
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: false
+  tags: true
+  categories: true
+
+
 
 # Pjax
 # It may contain bugs and unstable, give feedback when you find the bugs.
