@@ -4,6 +4,10 @@ Allow: /archives/
 Allow: /categories/
 Allow: /tags/
 
+Disallow: /img/
+Disallow: /photos/
+Disallow: /*.css
+Disallow: /*.js
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/
