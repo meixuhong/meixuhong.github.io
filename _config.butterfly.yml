@@ -427,7 +427,7 @@ footer:
     enable: true
     since: 2016
   custom_text:
-      CDN By <a target="_blank" rel="external nofollow" href="https://www.jsdelivr.com/">jsDelivr</a>  | Host By <a target="_blank" rel="external nofollow" href="https://netlify.com/">Netlify</a>
+      CDN By <a target="_blank" rel="external nofollow" href="https://www.jsdelivr.com/">jsDelivr</a>  | Host By <a target="_blank" rel="external nofollow" href="https://netlify.com/">Netlify</a> | Mirrors at <a target="_blank" rel="external nofollow" href="https://blog.meixuhong.com/">Vercel</a>
   copyright: true # Copyright of theme and framework
 
 # Analysis
