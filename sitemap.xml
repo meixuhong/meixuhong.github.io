@@ -4,21 +4,28 @@
   <url>
     <loc>https://meixuhong.com/categories/index.html</loc>
     
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://meixuhong.com/docker/index.html</loc>
     
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/index.html</loc>
     
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/deploy-img-hosting-with-cdn-for-free.html</loc>
+    
+    <lastmod>2021-06-13</lastmod>
     
   </url>
   
@@ -74,7 +81,7 @@
 
   <url>
     <loc>https://meixuhong.com/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,77 +89,112 @@
   
   <url>
     <loc>https://meixuhong.com/tags/WSL/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Python/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Gitbook/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Github/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Git/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Hexo/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/tags/Web/</loc>
+    <lastmod>2021-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/tags/Tools/</loc>
+    <lastmod>2021-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/tags/jsDelivr/</loc>
+    <lastmod>2021-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/tags/Vercel/</loc>
+    <lastmod>2021-06-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://meixuhong.com/tags/Netlify/</loc>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Mysql/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/DNS/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Kindle/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Docker/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/tags/Harbor/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -161,28 +203,28 @@
   
   <url>
     <loc>https://meixuhong.com/categories/Python/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/categories/Web/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/categories/SQL/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://meixuhong.com/categories/Cloud/</loc>
-    <lastmod>2021-06-08</lastmod>
+    <lastmod>2021-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

@@ -244,6 +244,75 @@
       </tags>
   </entry>
   <entry>
+    <title>【保姆式教程】搭建一套高速的永久免费CDN图床</title>
+    <url>//deploy-img-hosting-with-cdn-for-free.html</url>
+    <content><![CDATA[<blockquote>
+<p>感谢大佬<a href="https://xpoet.cn/">XPoet</a>开发的基于 GitHub API 开发的图床神器<code>picx</code>，感谢<a href="https://www.jsdelivr.com/">jsDelivr</a>提供免费CDN 加速。</p>
+</blockquote>
+<p>简单总结一下思路：</p>
+<ol>
+<li>到<a href="https://github.com/meixuhong/picx">github</a>上克隆<code>picx</code>源码</li>
+<li>在<a href="https://travis-ci.com/">travis-ci</a>上关联该<code>picx</code>项目</li>
+<li>在<code>vue2-dev</code>分支调测并推送静态网站源码至<code>gh-pages</code>分支</li>
+<li>在<a href="https://vercel.com/">Vercel</a>或者<a href="https://www.netlify.com/">Netlify</a>上关联<code>gh-pages</code>部署为静态网页</li>
+</ol>
+<h2 id="从Github上克隆源码"><a href="#从Github上克隆源码" class="headerlink" title="从Github上克隆源码"></a>从Github上克隆源码</h2><p>登录到<a href="https://github.com/meixuhong/picx">github</a>上克隆<code>picx</code>源码，其中<code>vue2-dev</code>分支是源码分支，<code>gh-pages</code>是用来存放静态网站的分支。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/1-clone-picx-source.png" alt="github_picx"></p>
+<p>为了能通过<a href="https://travis-ci.com/">travis-ci</a>自动编译，我们需要对<a href="https://github.com/meixuhong/picx">github</a>设置钩子。到<a href="https://github.com/settings/tokens">github setting</a>上创建<code>token</code>，并关联至<a href="https://travis-ci.com/">travis-ci</a>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/2-github-token-gen.png" alt="2-github-token-gen"></p>
+<p>创建一个新的<code>token</code>，设置<code>scope</code>含<code>repo</code>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/3-github-token-scope.png" alt="3-github-token-scope"></p>
+<p>创建完成后，复制该<code>token</code>，需要注意的是该<code>token</code>只会出现一次，后续无法在<code>github</code>上查看，如果丢失，只能重新创建一个新的<code>token</code>，所以我们需要自己保存记录到本地。</p>
+<h2 id="在Travis-CI上关联该项目"><a href="#在Travis-CI上关联该项目" class="headerlink" title="在Travis-CI上关联该项目"></a>在Travis-CI上关联该项目</h2><p>在<a href="https://travis-ci.com/">travis-ci</a>上关联该<code>picx</code>项目，如果没有<code>travis-ci</code>账号，可以使用<code>github</code>账号关联创建，此处不再复述。在<code>travis-ci</code>中设置环境变量，将刚才设置的<code>github</code>的<code>token</code>填入，如下图示。</p>
+<ul>
+<li>NAME填入<code>GH_TOKEN</code></li>
+<li>VALUE填入<code>TOKEN值</code> , 即从github上创建生成的值</li>
+<li>BRANCH填入源码分支<code>vue2.x-dev</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/4-travis-ci-setting-for-picx.png.png" alt="4-travis-ci-setting-for-picx"></p>
+<h2 id="编译生成静态网站"><a href="#编译生成静态网站" class="headerlink" title="编译生成静态网站"></a>编译生成静态网站</h2><p><a href="https://travis-ci.com/">travis-ci</a>配置完成后，可以到<code>vue2-dev</code>源码分支修改文件，测试<code>travis-ci</code>是否支持编译了。比如，修改一下<code>Readme.md</code>文件并提交到仓库，<code>github</code>发生变化后，<code>travis-ci</code>通过钩子发现分支变化，于是开始编译，下图表示<code>travis-ci</code>正在编译<code>vue2.x-dev</code>分支源码。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/5-travis-building-project.png" alt="5-travis-building-project"></p>
+<p>黄色表示正在编译，不出意外会完成编译，最终是绿色。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/6-travis-ci-done.png" alt="6-travis-ci-done"></p>
+<p>完成编译后分别到github查看对应的源码状态。可以看到<code>vue2.x-dev</code>分支提交了一个文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/7-vue2.x-dev-branch-update.png" alt="7-vue2"></p>
+<p><code>gh-pages</code>分支则由<strong>travisbot</strong>完成了编译。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/8-gh-pages-branch-update.png" alt="8-gh-pages-branch-update"></p>
+<p>至于如何在该分支编译的，咱们暂且不用关注，如果感兴趣，可以查看一下<code>vue2.x-dev</code>分支下的<code>.travis.yml</code>源码。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译语言、环境</span></span><br><span class="line"><span class="attr">dist:</span> <span class="string">xenial</span></span><br><span class="line"><span class="attr">os:</span> <span class="string">linux</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Node.js 版本</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="attr">cache:</span> <span class="string">npm</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只有 源码 分支更改才触发 CI</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">vue2.x-dev</span></span><br><span class="line"></span><br><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">export</span> <span class="string">TZ=&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="comment"># 安装依赖</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span> <span class="comment"># 执行打包命令，生成 dist 静态文件</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">strategy:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">provider:</span> <span class="string">pages</span></span><br><span class="line">  <span class="attr">skip_cleanup:</span> <span class="literal">true</span>      <span class="comment"># 跳过清理</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">$GH_TOKEN</span>        <span class="comment"># GitHub Token 变量</span></span><br><span class="line">  <span class="attr">keep_history:</span> <span class="literal">true</span>      <span class="comment"># 保持推送记录，以增量提交的方式</span></span><br><span class="line">  <span class="attr">local_dir:</span> <span class="string">dist</span>         <span class="comment"># 需要推送到 GitHub 的静态文件目录</span></span><br><span class="line">  <span class="attr">target_branch:</span> <span class="string">gh-pages</span> <span class="comment"># 推送的目标文件 local_dir -&gt; gh-pages 分支</span></span><br><span class="line">  <span class="attr">on:</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">vue2.x-dev</span>        <span class="comment"># 源码工作分支</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Vercel托管静态网站"><a href="#Vercel托管静态网站" class="headerlink" title="Vercel托管静态网站"></a>Vercel托管静态网站</h2><p><a href="https://vercel.com/">Vercel</a>为开发者提供免费的一键式托管服务，可以通过导入主流的代码托管平台的项目来进行静态网站托管。选择 Vercel 的原因不仅是因为其完全免费，而且在国内环境下，其部署的网站访问速度也算是一流。</p>
+<blockquote>
+<p><a href="https://www.netlify.com/">Netlify</a>也提供相同的功能与类似的CDN全站加速功能，两者功能与用法也都差不多，可以二选一。</p>
+</blockquote>
+<p>如果没有vercel账号，可以绑定github账号快速注册，完成注册后可以直接导入对应工程，如下图示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/9-vercel-import-project.png" alt="9-vercel-import-project"></p>
+<p>导入工程示意图如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/10-Select-vercel-scope.png" alt="10-Select-vercel-scope"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/11-import-default-branch-to-vercel.png" alt="11-import-default-branch-to-vercel"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/12-import-default-branch-to-vercel_build-options.png" alt="12-import-default-branch-to-vercel_build-options"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/13-start-building-project-in-vercel.png" alt="13-start-building-project-in-vercel"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/14-build-done-in-vercel.png" alt="14-build-done-in-vercel"></p>
+<p>完成部署后，可点击<strong>Visit</strong>直接访问，填入之前配置的<code>github token</code>即可直接使用。填入token后可以选择github上的一个仓库，作为图床base，图片都存放于此，下面示意为，选择<a href="https://github.com/imlaomei/cdn">cdn</a>仓库。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/16-cdn-img-hosting-setting.png" alt="16-cdn-img-hosting-setting"></p>
+<p>配置完成之后，就可以通过web直接上传图片了，当然也可以通过PicGo等工具设置自动上传。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/imlaomei/cdn@main/img-hosting/17-cdn-img-hosting-overview.png" alt="17-cdn-img-hosting-overview"></p>
+<blockquote>
+<p>后记：如果有域名，可以在Vercel上加一个自己的域名，不再复述，以上。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>Tools</tag>
+        <tag>jsDelivr</tag>
+        <tag>Vercel</tag>
+        <tag>Netlify</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows下修改Mysql密码</title>
     <url>//how-to-modify-mysql-password-in-windows.html</url>
     <content><![CDATA[<p>之前在Windows上装过一次Mysql学习，后来由于电脑原因卸载了，这次重新安装后，发现在配置过程中失败，退出配置后直接登录也不行，多次查询之后才知道原来是因为很久之前安装的mysql的密码与这次安装的密码不一致导致的，可是，过了这么久天知道我当时设置的啥密码啊。。。好吧，那就重置吧。</p>
